@@ -15,6 +15,8 @@ const config: Config = {
           secondary: "#313F90",
 
           "--white": "#FFFFFF",
+          "--darkGray": "#4B5563",
+          "--lightGreen": "#50F0A3",
         },
       },
     ],
