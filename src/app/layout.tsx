@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Roboto, Quicksand } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 
-// const inter = Inter({ subsets: ["latin"] });
-// const roboto = Roboto({ weight: "300", subsets: ["latin"] });
 const quickSand = Quicksand({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,9 +16,20 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="light" lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          charSet="UTF-8"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+      </head>
       <body className={quickSand.className}>{children}</body>
-      {/* <body className={roboto.className}>{children}</body> */}
-      {/* <body className={inter.className}>{children}</body> */}
     </html>
   );
 }

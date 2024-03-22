@@ -56,7 +56,7 @@ const Navbar = () => {
                   </li>
                 </ul>
               </div>
-              <a className="btn btn-ghost text-2xl text-[--white]">
+              <Link href="/" className="btn btn-ghost text-2xl text-[--white]">
                 <Image
                   src="https://img.icons8.com/pastel-glyph/64/FFFFFF/fast-cart.png"
                   width={34}
@@ -64,7 +64,7 @@ const Navbar = () => {
                   alt="logo"
                 ></Image>
                 Deshi Bazar
-              </a>
+              </Link>
             </div>
             <div className="navbar-center hidden lg:flex ">
               <ul className="menu menu-horizontal px-1">

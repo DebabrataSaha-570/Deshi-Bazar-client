@@ -1,5 +1,6 @@
 import React from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
+import Banner from "@/components/ui/Banner/Banner";
 
 const About = () => {
   return (
