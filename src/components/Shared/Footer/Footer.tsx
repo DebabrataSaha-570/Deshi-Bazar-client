@@ -16,7 +16,8 @@ import paymentImage from "../../../assets/visa_masterCard_americanExpress.png";
 const Footer = () => {
   return (
     <>
-      <section className="bg-gray-700 text-[--white] py-10 px-7 ">
+      <section className="bg-gray-700  text-[--white] py-10 px-7 ">
+        {/* <section className=" bg-primary text-[--white] py-10 px-7 "> */}
         <Container className="md:px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             <div>

@@ -7,9 +7,8 @@ import Slider from "react-slick";
 import image6 from "@/assets/banner/banner_6.jpg";
 import shape1 from "@/assets/shapes/shapes_1.png";
 import shape2 from "@/assets/shapes/shape_2.png";
-import image5 from "@/assets/banner/banner_5.jpg";
-import image8 from "@/assets/banner/banner_8.jpg";
 import image4 from "@/assets/banner/banner_4.jpg";
+import image5 from "@/assets/banner/banner_5.jpg";
 
 import Image from "next/image";
 import PrimaryButton from "../PrimaryButton";
@@ -67,7 +66,7 @@ const Banner = () => {
   return (
     <Slider {...settings}>
       <div className="w-full ">
-        <div className="h-[650px] relative ">
+        <div className="h-[620px] relative ">
           <Image
             src={image6}
             alt="banner_image_1"
@@ -116,68 +115,49 @@ const Banner = () => {
         </div>
       </div>
       <div className="w-full ">
-        <div className="h-[650px] relative ">
+        <div className="h-[620px] relative ">
           <Image
-            src={image4}
-            // src={image5}
-            // src={image8}
+            src={image5}
             alt="banner_image_1"
             layout="fill"
             objectFit="cover"
           ></Image>
 
           <div className="absolute inset-0 flex justify-center items-center ">
-            <div className="relative ">
-              <div className="space-y-3 ">
-                <h3 className="text-white font-semibold text-xl underline">
+            <div className=" ">
+              <motion.div
+                animate={{ rotate: [0, 3600] }}
+                transition={{ duration: 120, loop: Infinity, ease: "linear" }}
+                className="z-5"
+              >
+                <Image
+                  src={shape1}
+                  alt="shape_1"
+                  width={450}
+                  height={450}
+                  className="w-[415px] md:w-[450px]"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  y: { type: "spring", stiffness: 60 },
+                  opacity: { duration: 1 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-10 "
+              >
+                <h4 className="text-base underline text-white font-normal">
                   eat fresh everyday.
-                </h3>
-                <h2 className="text-7xl md:text-8xl font-bold text-primary">
-                  Organic{" "}
-                </h2>
-                <h2 className="text-7xl md:text-8xl font-bold text-white">
-                  & healthy
-                </h2>
-                <h4 className="text-white text-xl font-semibold">
-                  no more doubts in picking
                 </h4>
+                <h2 className="text-7xl font-bold text-white">Organic.</h2>
+                <h2 className="text-7xl font-bold text-white"> & healthy</h2>
 
-                <div className="inline-block">
-                  <PrimaryButton>Shop Now</PrimaryButton>
-                </div>
-              </div>
-
-              <div className="absolute top-[-105px] right-[-35px] md:right-[-50px] ">
-                <div className="relative">
-                  <motion.div
-                    animate={{ rotate: [0, 3600] }}
-                    transition={{
-                      duration: 120,
-                      loop: Infinity,
-                      ease: "linear",
-                    }}
-                  >
-                    <Image
-                      src={shape1}
-                      width={180}
-                      height={180}
-                      alt="shape_2"
-                      className="w-[165px] md:w-[180px]"
-                    ></Image>
-                  </motion.div>
-                  <div className="absolute inset-0 flex flex-col justify-center items-center">
-                    <h3 className="text-white font-semibold text-base">
-                      Discount
-                    </h3>
-                    <h2 className="text-white text-4xl font-bold my-1 md:my-2">
-                      30%
-                    </h2>
-                    <h3 className="px-4 py-2 bg-white rounded-md text-red-700 font-bold">
-                      Today
-                    </h3>
-                  </div>
-                </div>
-              </div>
+                <PrimaryButton className="mt-5">Shop Now</PrimaryButton>
+              </motion.div>
             </div>
           </div>
         </div>

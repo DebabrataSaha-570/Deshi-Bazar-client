@@ -6,7 +6,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <section className="bg-primary text-[--white]">
+      <section className="bg-primary text-[--white] sticky top-0 z-50">
         <Container>
           <div className="navbar ">
             <div className="navbar-start">
@@ -54,6 +54,9 @@ const Navbar = () => {
                   <li>
                     <Link href="/contact">Contact Us</Link>
                   </li>
+                  <li>
+                    <Link href="/Dashboard">Dashboard</Link>
+                  </li>
                 </ul>
               </div>
               <Link href="/" className="btn btn-ghost text-2xl text-[--white]">
@@ -86,6 +89,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>
+                </li>
+                <li>
+                  <Link href="/Dashboard">Dashboard</Link>
                 </li>
               </ul>
             </div>

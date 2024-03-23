@@ -12,7 +12,7 @@ const config: Config = {
       {
         deshiBazarTheme: {
           primary: "#0A525B",
-          secondary: "#313F90",
+          secondary: "#374151",
 
           "--white": "#FFFFFF",
           "--darkGray": "#4B5563",
