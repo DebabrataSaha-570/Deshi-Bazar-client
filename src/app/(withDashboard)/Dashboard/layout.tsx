@@ -2,7 +2,6 @@ import React, { ReactNode } from "react";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 import Link from "next/link";
 import { FaListUl } from "react-icons/fa6";
-import { MdOutlineCalculate } from "react-icons/md";
 // import { useRouter } from "next/router";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
@@ -30,19 +29,6 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
             <Link
               href="/Dashboard"
-              className="px-4 py-3 text-base rounded-lg mb-3 "
-            >
-              <h3 className="flex items-center gap-3">
-                {" "}
-                <span className="text-2xl">
-                  <MdOutlineCalculate />
-                </span>{" "}
-                Product Statistics
-              </h3>
-            </Link>
-
-            <Link
-              href="/Dashboard/allProducts"
               className="px-4 py-3 text-base rounded-lg mb-3 bg-primary"
             >
               <h3 className="flex items-center gap-3">
