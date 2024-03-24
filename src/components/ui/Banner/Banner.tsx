@@ -92,6 +92,7 @@ const Banner = () => {
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{
                   delay: 0.2,
                   y: { type: "spring", stiffness: 60 },
@@ -141,6 +142,7 @@ const Banner = () => {
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{
                   delay: 0.2,
                   y: { type: "spring", stiffness: 60 },

@@ -14,7 +14,7 @@ const DashBoard = async () => {
 
       <div className="overflow-x-auto">
         <table className="table my-5 rounded-md border ">
-          <thead className="bg-gray-500  text-base ">
+          <thead className="bg-secondary  text-base text-white ">
             <tr>
               <th>SL No</th>
               <th>Products</th>
