@@ -120,31 +120,31 @@ const Footer = () => {
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Puffed Rice (Muri)
+                  Red Tomato
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Lentils (Dal)
+                  Gala Apple
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Mustard Oil (Sarson Tel)
+                  Chashi Chinigura Rice
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Jaggery (Gur)
+                  Radhuni Chicken Masala
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Spices (Masala)
+                  Aarong Butter
                 </Link>
               </div>
             </div>
@@ -155,31 +155,31 @@ const Footer = () => {
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Fresh Produce
+                  Vegetables
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Pantry Staples
+                  Fruits
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Dairy & Eggs
+                  Cooking
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Frozen Foods
+                  Dairy
                 </Link>
                 <Link
                   href="/"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
-                  Snacks & Beverages
+                  Fish
                 </Link>
               </div>
             </div>

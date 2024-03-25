@@ -109,7 +109,7 @@ const SingleProduct = async ({ params }: any) => {
             <h2 className="text-3xl mb-5 ">Description</h2>
 
             <ul className="  font-normal text-gray-600 space-y-3">
-              {product.description.map((sentence: string, index: number) => (
+              {product?.description?.map((sentence: string, index: number) => (
                 <li key={index}> {sentence}</li>
               ))}
             </ul>
