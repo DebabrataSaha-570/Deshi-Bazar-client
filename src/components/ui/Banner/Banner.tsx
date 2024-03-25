@@ -105,8 +105,11 @@ const Banner = () => {
                 <h4 className="text-base underline text-white font-normal">
                   eat fresh everyday.
                 </h4>
-                <h2 className="text-7xl font-bold text-white">Organic.</h2>
-                <h2 className="text-7xl font-bold text-white"> & healthy</h2>
+                <h2 className="text-7xl font-semibold text-white">Organic.</h2>
+                <h2 className="text-7xl font-semibold text-white">
+                  {" "}
+                  & healthy
+                </h2>
 
                 <PrimaryButton className="mt-5">Shop Now</PrimaryButton>
               </motion.div>
@@ -155,9 +158,9 @@ const Banner = () => {
                 <h4 className="text-base underline text-white font-normal">
                   don&apos;t miss 3 day vegetable sale
                 </h4>
-                <h2 className="text-7xl font-bold text-white">eat.</h2>
-                <h2 className="text-7xl font-bold text-white">love.</h2>
-                <h3 className="text-7xl font-bold text-white">repeat.</h3>
+                <h2 className="text-7xl font-semibold text-white">eat.</h2>
+                <h2 className="text-7xl font-semibold text-white">love.</h2>
+                <h3 className="text-7xl font-semibold text-white">repeat.</h3>
 
                 <PrimaryButton className="mt-5">Shop Now</PrimaryButton>
               </motion.div>

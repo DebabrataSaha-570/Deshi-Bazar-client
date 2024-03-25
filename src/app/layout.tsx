@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Quicksand, Roboto } from "next/font/google";
 import "./globals.css";
 
 const quickSand = Quicksand({ weight: "500", subsets: ["latin"] });
+// const quickSand = Quicksand({ weight: "500", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Deshi Bazar ",

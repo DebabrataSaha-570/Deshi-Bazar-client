@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 };
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products"); //data will be cached
+  const res = await fetch(
+    "https://deshi-bazar-server.vercel.app/api/v1/products"
+  ); //data will be cached
+  // const res = await fetch("http://localhost:5000/api/v1/products"); //data will be cached
   const products = await res.json();
 
   const flashSaleProducts = products.filter(

@@ -6,11 +6,15 @@ import ProductCard from "../ui/ProductCard";
 import Link from "next/link";
 
 const FlashSaleHome = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
-    next: {
-      revalidate: 30, // data will be load in every 30s
-    },
-  });
+  const res = await fetch(
+    "https://deshi-bazar-server.vercel.app/api/v1/products",
+    {
+      // const res = await fetch("http://localhost:5000/api/v1/products", {
+      next: {
+        revalidate: 30, // data will be load in every 30s
+      },
+    }
+  );
   const products = await res.json();
 
   const flashSaleProducts = products.filter(
@@ -20,7 +24,7 @@ const FlashSaleHome = async () => {
   return (
     <Container className="px-8 my-16">
       <div className="flex justify-between items-center">
-        <h2 className="text-3xl font-bold">Flash Sale</h2>
+        <h2 className="text-4xl font-semibold">Flash Sale</h2>
 
         <Link href="/flashSale">
           <SecondaryButton>View All</SecondaryButton>

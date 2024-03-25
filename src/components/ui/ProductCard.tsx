@@ -66,12 +66,12 @@ const ProductCard = ({
           </p>
         </div>
         <div>
-          <h3 className="text-xl hover:text-[--mediumGreen] transition duration-300 ">
+          <h3 className="text-xl font-normal hover:text-[--mediumGreen] transition duration-300 ">
             {product.title}
           </h3>
           <div className="flex justify-between items-center ">
-            <div className="flex gap-2">
-              <p className="text-gray-500 line-through text-base ">
+            <div className="flex gap-2 text-base ">
+              <p className="text-gray-500 line-through  ">
                 &#2547;{product.previous_price}
               </p>
               <p>&#2547;{product.price}</p>

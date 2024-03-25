@@ -3,9 +3,13 @@ import Image from "next/image";
 import React from "react";
 
 const DashBoard = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
-    cache: "no-store", //data will be loaded on every  request. Data will not be cached.
-  });
+  const res = await fetch(
+    "https://deshi-bazar-server.vercel.app/api/v1/products",
+    {
+      // const res = await fetch("http://localhost:5000/api/v1/products", {
+      cache: "no-store", //data will be loaded on every  request. Data will not be cached.
+    }
+  );
   const products = await res.json();
 
   return (

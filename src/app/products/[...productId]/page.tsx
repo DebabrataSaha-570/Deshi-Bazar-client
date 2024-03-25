@@ -1,17 +1,16 @@
 import CommonLayout from "@/app/(withCommonLayout)/layout";
 import Container from "@/components/ui/Container";
 import ImageMagnifier from "@/components/ui/ImageMagnifier";
-import Image from "next/image";
 import React from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
 import { SiHackthebox } from "react-icons/si";
-import ReactImageMagnify from "react-image-magnify";
 
 const SingleProduct = async ({ params }: any) => {
   // console.log("params", params);
 
   const res = await fetch(
-    ` http://localhost:5000/api/v1/product/${params.productId}`,
+    ` https://deshi-bazar-server.vercel.app/api/v1/product/${params.productId}`,
+    // ` http://localhost:5000/api/v1/product/${params.productId}`,
     {
       cache: "no-store", // data wil be load on every request.
     }
@@ -61,14 +60,12 @@ const SingleProduct = async ({ params }: any) => {
 
             {/* right side  */}
             <div className="mx-5 my-3 md:my-0  ">
-              <h2 className="text-2xl ">
+              <h2 className="text-3xl  ">
                 {product.title} {product.quantity} {product.quantity_unit}
               </h2>
-              <div className="flex items-center">
-                <h3 className="text-3xl font-light">
-                  &#2547;{product.price} |{" "}
-                </h3>
-                <div className="rating rating-lg rating-half flex items-center mx-3">
+              <div className="flex items-center my-2 font-normal">
+                <h3 className="text-3xl ">&#2547;{product.price} | </h3>
+                <div className="rating rating-lg rating-half flex items-center mx-3 ">
                   {generateRatingInputs(product.ratings)}
                   <span className="text-gray-500 mx-3">
                     ({product.total_reviews} review)
@@ -79,13 +76,13 @@ const SingleProduct = async ({ params }: any) => {
 
               {/* product detials */}
 
-              <ul className="list-outside list-disc mx-5 space-y-2 text-normal text-gray-600">
+              <ul className="list-outside list-disc mx-5 space-y-2 font-normal  text-gray-600">
                 {product.description.map((sentence: string, index: number) => (
                   <li key={index}> {sentence}</li>
                 ))}
               </ul>
 
-              <div className="my-5 text-gray-700 space-y-2">
+              <div className="my-5 text-gray-700 space-y-2 font-normal">
                 <p className=" flex  items-center gap-2">
                   <span className="text-[24px] text-gray-400">
                     {" "}
@@ -111,7 +108,7 @@ const SingleProduct = async ({ params }: any) => {
           <div className=" max-w-[1260px] mx-auto px-5 py-16">
             <h2 className="text-3xl mb-5 ">Description</h2>
 
-            <ul className="  text-normal text-gray-600 space-y-3">
+            <ul className="  font-normal text-gray-600 space-y-3">
               {product.description.map((sentence: string, index: number) => (
                 <li key={index}> {sentence}</li>
               ))}
