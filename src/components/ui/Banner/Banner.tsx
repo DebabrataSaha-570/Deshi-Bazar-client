@@ -68,6 +68,56 @@ const Banner = () => {
       <div className="w-full ">
         <div className="h-[620px] relative ">
           <Image
+            src={image5}
+            alt="banner_image_1"
+            layout="fill"
+            objectFit="cover"
+          ></Image>
+
+          <div className="absolute inset-0 flex justify-center items-center ">
+            <div className=" ">
+              <motion.div
+                animate={{ rotate: [0, 3600] }}
+                transition={{ duration: 120, loop: Infinity, ease: "linear" }}
+                className="z-5"
+              >
+                <Image
+                  src={shape1}
+                  alt="shape_1"
+                  width={450}
+                  height={450}
+                  className="w-[415px] md:w-[450px]"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: 0.2,
+                  y: { type: "spring", stiffness: 60 },
+                  opacity: { duration: 1 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-10 "
+              >
+                <h4 className="text-base underline text-white font-normal">
+                  eat fresh everyday.
+                </h4>
+                <h2 className="text-7xl font-bold text-white">Organic.</h2>
+                <h2 className="text-7xl font-bold text-white"> & healthy</h2>
+
+                <PrimaryButton className="mt-5">Shop Now</PrimaryButton>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full ">
+        <div className="h-[620px] relative ">
+          <Image
             src={image6}
             alt="banner_image_1"
             layout="fill"
@@ -108,55 +158,6 @@ const Banner = () => {
                 <h2 className="text-7xl font-bold text-white">eat.</h2>
                 <h2 className="text-7xl font-bold text-white">love.</h2>
                 <h3 className="text-7xl font-bold text-white">repeat.</h3>
-
-                <PrimaryButton className="mt-5">Shop Now</PrimaryButton>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-full ">
-        <div className="h-[620px] relative ">
-          <Image
-            src={image5}
-            alt="banner_image_1"
-            layout="fill"
-            objectFit="cover"
-          ></Image>
-
-          <div className="absolute inset-0 flex justify-center items-center ">
-            <div className=" ">
-              <motion.div
-                animate={{ rotate: [0, 3600] }}
-                transition={{ duration: 120, loop: Infinity, ease: "linear" }}
-                className="z-5"
-              >
-                <Image
-                  src={shape1}
-                  alt="shape_1"
-                  width={450}
-                  height={450}
-                  className="w-[415px] md:w-[450px]"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: 0.2,
-                  y: { type: "spring", stiffness: 60 },
-                  opacity: { duration: 1 },
-                  ease: "easeIn",
-                  duration: 1,
-                }}
-                className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center z-10 "
-              >
-                <h4 className="text-base underline text-white font-normal">
-                  eat fresh everyday.
-                </h4>
-                <h2 className="text-7xl font-bold text-white">Organic.</h2>
-                <h2 className="text-7xl font-bold text-white"> & healthy</h2>
 
                 <PrimaryButton className="mt-5">Shop Now</PrimaryButton>
               </motion.div>

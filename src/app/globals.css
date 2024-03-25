@@ -52,3 +52,19 @@
 .banner-image {
   filter: brightness(70%);
 }
+
+.imageMagnifier {
+  /* width: 600px; */
+  width: "100%";
+  height: 500px;
+  /* height: "100%"; */
+  margin: 0 auto;
+  /* border: 1px solid blue; */
+  /* object-fit: cover; */
+}
+
+.imageMagnifier img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
