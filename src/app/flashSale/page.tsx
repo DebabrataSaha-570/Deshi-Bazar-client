@@ -28,7 +28,7 @@ const FlashSale = async () => {
     <CommonLayout>
       <Container className="px-8 mt-10 mb-16">
         <div>
-          <h2 className="text-3xl font-bold">Flash Sale</h2>
+          <h2 className="text-3xl font-semibold">Flash Sale</h2>
         </div>
 
         {/* <UseCountDown

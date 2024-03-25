@@ -48,12 +48,12 @@ const Navbar = () => {
                   <li>
                     <Link href="/flashSale">Flash Sale</Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
                     <Link href="/contact">Contact Us</Link>
-                  </li> */}
+                  </li>
                   <li>
                     <Link href="/Dashboard">Dashboard</Link>
                   </li>
@@ -84,12 +84,12 @@ const Navbar = () => {
                 <li>
                   <Link href="/flashSale">Flash Sale</Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link href="/about">About Us</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>
-                </li> */}
+                </li>
                 <li>
                   <Link href="/Dashboard">Dashboard</Link>
                 </li>
