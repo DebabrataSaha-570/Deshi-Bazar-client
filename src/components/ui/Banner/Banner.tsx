@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import Slider from "react-slick";
 
-import image6 from "@/assets/banner/banner_6.jpg";
+import image6 from "@/assets/banner/banner_6.1.jpg";
 import shape1 from "@/assets/shapes/shapes_1.png";
 import shape2 from "@/assets/shapes/shape_2.png";
-import image4 from "@/assets/banner/banner_4.jpg";
-import image5 from "@/assets/banner/banner_5.jpg";
+import image5 from "@/assets/banner/banner_5.1.jpg";
 
 import Image from "next/image";
 import PrimaryButton from "../PrimaryButton";
@@ -122,6 +121,7 @@ const Banner = () => {
         <div className="h-[620px] relative ">
           <Image
             src={image6}
+            // src={image5}
             alt="banner_image_1"
             layout="fill"
             objectFit="cover"

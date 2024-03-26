@@ -5,7 +5,7 @@ import React from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
 import { SiHackthebox } from "react-icons/si";
 
-const SingleProduct = async ({ params }: any) => {
+const SingleProductPage = async ({ params }: any) => {
   // console.log("params", params);
 
   const res = await fetch(
@@ -120,4 +120,4 @@ const SingleProduct = async ({ params }: any) => {
   );
 };
 
-export default SingleProduct;
+export default SingleProductPage;

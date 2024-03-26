@@ -28,7 +28,7 @@ const PopularProductsHome = async () => {
           Popular Products
         </h2>
 
-        <Link href="/flashSale">
+        <Link href="/allProducts">
           <SecondaryButton>View All</SecondaryButton>
         </Link>
       </div>
