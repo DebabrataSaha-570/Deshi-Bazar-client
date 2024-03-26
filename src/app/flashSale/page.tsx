@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { TProduct } from "@/types";
 import Container from "@/components/ui/Container";
 import ProductCard from "@/components/ui/ProductCard";
+import UseCountDown from "@/components/ui/UseCountDown";
 // import useCountDown from "@/lib/useCountDown";
 
 export const metadata: Metadata = {
@@ -27,37 +28,18 @@ const FlashSale = async () => {
   return (
     <CommonLayout>
       <Container className="px-8 mt-10 mb-16">
-        <div>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
           <h2 className="text-3xl font-semibold">Flash Sale</h2>
+
+          <div className="flex items-center gap-5 md:mx-5">
+            <h3 className="text-2xl ">Ending In </h3>
+            <UseCountDown
+              InitialHours={10}
+              InitialMinutes={5}
+              InitialSeconds={7}
+            ></UseCountDown>{" "}
+          </div>
         </div>
-
-        {/* <UseCountDown
-          InitialHours={10}
-          InitialMinutes={0}
-          InitialSeconds={0}
-        ></UseCountDown> */}
-
-        {/* <div className="flex gap-5 text-center auto-cols-max">
-          <h2>Ends In:</h2>
-          <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-            <span className="countdown font-mono text-5xl">
-              <span style={{ "--value": hours }}></span>
-            </span>
-            hours
-          </div>
-          <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-            <span className="countdown font-mono text-5xl">
-              <span style={{ "--value": minutes }}></span>
-            </span>
-            min
-          </div>
-          <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-            <span className="countdown font-mono text-5xl">
-              <span style={{ "--value": seconds }}></span>
-            </span>
-            sec
-          </div>
-        </div> */}
 
         <div className="my-10">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-items-center">

@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 
 const UseCountDown = ({
@@ -31,29 +32,19 @@ const UseCountDown = ({
     return () => clearInterval(interval);
   }, [hours, minutes, seconds]);
   return (
-    <div className="flex gap-5 text-center auto-cols-max">
-      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl">
-          {/* <span> {hours}</span> */}
-          <span style={{ "--value": hours } as any}></span>
-        </span>
-        hours
-      </div>
-      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl">
-          {/* <span> {minutes}</span> */}
-          <span style={{ "--value": minutes } as any}></span>
-        </span>
-        min
-      </div>
-      <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-        <span className="countdown font-mono text-5xl">
-          <span style={{ "--value": seconds } as any}></span>
-          {/* <span> {seconds}</span> */}
-        </span>
-        sec
-      </div>
-    </div>
+    <span className=" font-mono text-xl">
+      <span className=" bg-[#FF6801] px-4 py-2 rounded-sm text-white text-2xl ">
+        {hours}
+      </span>
+      <span className="text-[#FF6801] mx-2">:</span>
+      <span className="bg-[#FF6801] px-4 py-2 rounded-sm text-white text-2xl">
+        {minutes}
+      </span>
+      <span className="text-[#FF6801] mx-2">:</span>
+      <span className="bg-[#FF6801] px-4 py-2 rounded-sm text-white text-2xl">
+        {seconds}
+      </span>
+    </span>
   );
 };
 

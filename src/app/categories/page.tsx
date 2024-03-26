@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
 import type { Metadata } from "next";
@@ -13,11 +12,11 @@ const Categories = () => {
   return (
     <CommonLayout>
       <h3>This is categories page</h3>
-      <UseCountDown
+      {/* <UseCountDown
         InitialHours={10}
         InitialMinutes={0}
         InitialSeconds={0}
-      ></UseCountDown>
+      ></UseCountDown> */}
     </CommonLayout>
   );
 };

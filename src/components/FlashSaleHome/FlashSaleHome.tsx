@@ -4,6 +4,7 @@ import SecondaryButton from "../ui/SecondaryButton";
 import { TProduct } from "@/types";
 import ProductCard from "../ui/ProductCard";
 import Link from "next/link";
+import UseCountDown from "../ui/UseCountDown";
 
 const FlashSaleHome = async () => {
   const res = await fetch(
@@ -23,15 +24,30 @@ const FlashSaleHome = async () => {
 
   return (
     <Container className="px-8 my-16">
-      <div className="flex justify-between items-center">
+      <div className="flex  justify-between items-center">
         <h2 className="text-4xl font-semibold">Flash Sale</h2>
+
+        <div className="hidden md:flex items-center gap-5 md:mx-5">
+          <h3 className="text-2xl ">Ending In </h3>
+          <UseCountDown
+            InitialHours={10}
+            InitialMinutes={5}
+            InitialSeconds={7}
+          ></UseCountDown>{" "}
+        </div>
 
         <Link href="/flashSale">
           <SecondaryButton>View All</SecondaryButton>
         </Link>
-        {/* <SecondaryButton>
-          <Link href="/flashSale">View All</Link>
-        </SecondaryButton> */}
+      </div>
+
+      <div className="flex md:hidden items-center gap-5 my-4">
+        <h3 className="text-2xl ">Ending In </h3>
+        <UseCountDown
+          InitialHours={10}
+          InitialMinutes={5}
+          InitialSeconds={7}
+        ></UseCountDown>{" "}
       </div>
 
       <div className="my-10">

@@ -1,6 +1,7 @@
 import CommonLayout from "@/app/(withCommonLayout)/layout";
 import Container from "@/components/ui/Container";
 import ImageMagnifier from "@/components/ui/ImageMagnifier";
+import { TProduct } from "@/types";
 import React from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
 import { SiHackthebox } from "react-icons/si";
@@ -121,3 +122,16 @@ const SingleProductPage = async ({ params }: any) => {
 };
 
 export default SingleProductPage;
+
+// export async function generateStaticParams() {
+//   const res = await fetch(
+//     "https://deshi-bazar-server.vercel.app/api/v1/products"
+//   );
+//   const products = await res.json();
+
+//   return products.map((product: TProduct) => ({
+//     productId: product._id,
+//   }));
+// }
+
+// export default SingleProductPage;
