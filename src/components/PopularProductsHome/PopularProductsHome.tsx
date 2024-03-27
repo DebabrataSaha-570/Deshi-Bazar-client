@@ -21,6 +21,22 @@ const PopularProductsHome = async () => {
     (item: TProduct) => item.ratings == 5
   );
 
+  const dairyProducts = popularProducts.filter(
+    (item: TProduct) => item.categories == "dairy"
+  );
+
+  const fishProducts = popularProducts.filter(
+    (item: TProduct) => item.categories == "fish"
+  );
+
+  const cookingProducts = popularProducts.filter(
+    (item: TProduct) => item.categories == "cooking"
+  );
+
+  const vegetablesProducts = popularProducts.filter(
+    (item: TProduct) => item.categories == "vegetables_fruits"
+  );
+
   return (
     <Container className="px-8 my-16">
       <div className="flex justify-between items-center ">
@@ -35,7 +51,29 @@ const PopularProductsHome = async () => {
 
       <div className="my-10">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-items-center">
-          {popularProducts.slice(0, 8).map((item: TProduct) => (
+          {dairyProducts.slice(0, 2).map((item: TProduct) => (
+            <ProductCard
+              key={item._id}
+              product={item}
+              showRating={true}
+            ></ProductCard>
+          ))}
+          {cookingProducts.slice(1, 3).map((item: TProduct) => (
+            <ProductCard
+              key={item._id}
+              product={item}
+              showRating={true}
+            ></ProductCard>
+          ))}
+
+          {vegetablesProducts.slice(1, 3).map((item: TProduct) => (
+            <ProductCard
+              key={item._id}
+              product={item}
+              showRating={true}
+            ></ProductCard>
+          ))}
+          {fishProducts.slice(0, 2).map((item: TProduct) => (
             <ProductCard
               key={item._id}
               product={item}

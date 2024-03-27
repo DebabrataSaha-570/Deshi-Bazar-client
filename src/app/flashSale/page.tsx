@@ -32,7 +32,7 @@ const FlashSale = async () => {
           <h2 className="text-3xl font-semibold">Flash Sale</h2>
 
           <div className="flex items-center gap-5 md:mx-5">
-            <h3 className="text-2xl ">Ending In </h3>
+            <h3 className="text-2xl ">Ends In</h3>
             <UseCountDown
               InitialHours={10}
               InitialMinutes={5}

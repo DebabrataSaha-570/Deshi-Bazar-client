@@ -33,15 +33,15 @@ const UseCountDown = ({
   }, [hours, minutes, seconds]);
   return (
     <span className=" font-mono text-xl">
-      <span className=" bg-[#FF6801] px-4 py-2 rounded-sm text-white text-2xl ">
+      <span className=" bg-[#F14705] px-4 py-2 rounded-sm text-white text-2xl ">
         {hours}
       </span>
-      <span className="text-[#FF6801] mx-2">:</span>
-      <span className="bg-[#FF6801] px-4 py-2 rounded-sm text-white text-2xl">
+      <span className="text-[#F14705] mx-2">:</span>
+      <span className="bg-[#F14705] px-4 py-2 rounded-sm text-white text-2xl">
         {minutes}
       </span>
-      <span className="text-[#FF6801] mx-2">:</span>
-      <span className="bg-[#FF6801] px-4 py-2 rounded-sm text-white text-2xl">
+      <span className="text-[#F14705] mx-2">:</span>
+      <span className="bg-[#F14705] px-4 py-2 rounded-sm text-white text-2xl">
         {seconds}
       </span>
     </span>
