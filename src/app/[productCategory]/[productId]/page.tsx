@@ -1,6 +1,7 @@
 import CommonLayout from "@/app/(withCommonLayout)/layout";
 import Container from "@/components/ui/Container";
 import ImageMagnifier from "@/components/ui/ImageMagnifier";
+import ProductDetailCarousel from "@/components/ui/ProductDetailCarousel";
 import { TProduct } from "@/types";
 import React from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
@@ -18,7 +19,6 @@ const SingleProductPage = async ({ params }: any) => {
   );
 
   const product = await res.json();
-  // console.log("data", product);
   const generateRatingInputs = (rating: number) => {
     const ratingArray = [];
 
@@ -55,9 +55,16 @@ const SingleProductPage = async ({ params }: any) => {
         <Container className=" mt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 ">
             {/* left side */}
-            <div className="h-[550px] md:h-[650px]">
-              <ImageMagnifier image={product.image_url}></ImageMagnifier>
+            <div className="">
+              <ProductDetailCarousel
+                image={product.image_url}
+              ></ProductDetailCarousel>
             </div>
+
+            {/* <div className="h-[550px] md:h-[650px]">
+              <ImageMagnifier image={product.image_url}></ImageMagnifier>
+              
+            </div> */}
 
             {/* right side  */}
             <div className="mx-5 my-3 md:my-0  ">
