@@ -21,7 +21,7 @@ const TopCategoriesHome = () => {
       <section>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 ">
           <div className="relative rounded-lg row-span-2 border h-[300px] md:h-[500px] ">
-            <Link href="/vegetables_fruits">
+            <Link href="/products/vegetables_fruits">
               <Image
                 src={vegetableImage}
                 width={0}
@@ -37,7 +37,7 @@ const TopCategoriesHome = () => {
             </Link>
           </div>
           <div className="relative rounded-lg category-image h-[300px] md:h-[240px]">
-            <Link href="/cooking">
+            <Link href="/products/cooking">
               <Image
                 src={cookingImage}
                 width={0}
@@ -53,7 +53,7 @@ const TopCategoriesHome = () => {
             </Link>
           </div>
           <div className="relative rounded-lg row-span-2 h-[300px] md:h-[500px] ">
-            <Link href="/dairy">
+            <Link href="/products/dairy">
               <Image
                 src={dairyImage}
                 width={0}
@@ -69,7 +69,7 @@ const TopCategoriesHome = () => {
             </Link>
           </div>
           <div className="relative rounded-lg h-[300px] md:h-[240px]">
-            <Link href="/fish ">
+            <Link href="/products/fish ">
               <Image
                 src={fishImage}
                 width={0}

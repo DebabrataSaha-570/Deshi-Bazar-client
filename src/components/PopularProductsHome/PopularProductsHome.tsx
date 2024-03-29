@@ -44,7 +44,7 @@ const PopularProductsHome = async () => {
           Popular Products
         </h2>
 
-        <Link href="/allProducts">
+        <Link href="/products/allProducts">
           <SecondaryButton>View All</SecondaryButton>
         </Link>
       </div>

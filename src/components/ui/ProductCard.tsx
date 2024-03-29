@@ -48,7 +48,7 @@ const ProductCard = ({
   };
 
   return (
-    <Link href={`/${product.categories}/${product._id}`}>
+    <Link href={`/products/${product.categories}/${product._id}`}>
       <div className="  rounded-md  cursor-pointer  h-[420px] p-3 border hover:border-black transition duration-500">
         <div className="relative">
           <Image

@@ -1,9 +1,9 @@
 import React from "react";
-import CommonLayout from "../(withCommonLayout)/layout";
 import type { Metadata } from "next";
 import { TProduct } from "@/types";
 import Container from "@/components/ui/Container";
 import ProductCard from "@/components/ui/ProductCard";
+import CommonLayout from "@/app/(withCommonLayout)/layout";
 // import { useNavigation } from "next/navigation";
 
 export const metadata: Metadata = {
