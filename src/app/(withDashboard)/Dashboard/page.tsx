@@ -1,5 +1,6 @@
 import { TProduct } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const DashBoard = async () => {
@@ -46,7 +47,11 @@ const DashBoard = async () => {
                   {product.title}
                 </td>
                 <td>{product.categories}</td>
-                <td className="underline">{product._id}</td>
+                <td className="underline">
+                  <Link href={`/${product.categories}/${product._id}`}>
+                    {product._id}
+                  </Link>
+                </td>
                 <td> &#2547; {product.price}</td>
               </tr>
             ))}

@@ -42,9 +42,7 @@ const DashboardNavbar = () => {
         </div>
         <div className="flex-none text-gray-300">
           <div className="dropdown dropdown-end text-end mx-2">
-            <h2 className=" text-sm md:text-base font-semibold">
-              Debabrata Saha
-            </h2>
+            <h2 className=" text-sm md:text-base font-semibold">Debabrata</h2>
             <p className="text-sm">Admin</p>
           </div>
           <div className="dropdown dropdown-end">

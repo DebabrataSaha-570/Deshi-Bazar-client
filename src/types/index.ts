@@ -14,3 +14,9 @@ export type TProduct = {
   availability: string;
   description: string[];
 };
+
+export type TProductId = {
+  params: {
+    productId: string;
+  };
+};

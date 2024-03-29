@@ -117,31 +117,31 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-8">Trending Products</h3>
               <div className="space-y-3">
                 <Link
-                  href="/"
+                  href="/vegetables_fruits/65fd8cb99b12d4e001cece70"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Red Tomato
                 </Link>
                 <Link
-                  href="/"
+                  href="/vegetables_fruits/65fd90f7bb0c2007e7001469"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Gala Apple
                 </Link>
                 <Link
-                  href="/"
+                  href="/cooking/65fd99de1c24b5e41bfd4d86"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Chashi Chinigura Rice
                 </Link>
                 <Link
-                  href="/"
+                  href="/cooking/65fd9d40728112494e35f075"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Radhuni Chicken Masala
                 </Link>
                 <Link
-                  href="/"
+                  href="/dairy/65fe511d91d50b1a3129c4cb"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Aarong Butter
@@ -152,31 +152,31 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-8">Categories</h3>
               <div className="space-y-3">
                 <Link
-                  href="/"
+                  href="/vegetables_fruits"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Vegetables
                 </Link>
                 <Link
-                  href="/"
+                  href="/vegetables_fruits"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Fruits
                 </Link>
                 <Link
-                  href="/"
+                  href="/cooking"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Cooking
                 </Link>
                 <Link
-                  href="/"
+                  href="/dairy"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Dairy
                 </Link>
                 <Link
-                  href="/"
+                  href="/fish"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Fish

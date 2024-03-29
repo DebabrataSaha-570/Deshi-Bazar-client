@@ -21,7 +21,6 @@ const ProductCategoryPage = async ({ params }: any) => {
 
   const res = await fetch(
     `https://deshi-bazar-server.vercel.app/api/v1/products?categories=${parameter} `
-    // `https://deshi-bazar-server.vercel.app/api/v1/products?categories=${params.productCategory} `
   );
   const products = await res.json();
 

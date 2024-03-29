@@ -33,10 +33,10 @@
 }
 
 .slick-arrow.slick-prev {
-  left: 31px;
+  left: 20px;
 }
 .slick-arrow.slick-next {
-  right: 31px;
+  right: 20px;
 }
 
 .slick-prev::before,
