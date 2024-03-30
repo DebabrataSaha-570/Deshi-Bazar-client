@@ -1,23 +1,21 @@
 import CommonLayout from "@/app/(withCommonLayout)/layout";
 import Container from "@/components/ui/Container";
-import ImageMagnifier from "@/components/ui/ImageMagnifier";
 import ProductDetailCarousel from "@/components/ui/ProductDetailCarousel";
 import { TProduct, TProductId } from "@/types";
-import React from "react";
 import { LiaCarSideSolid } from "react-icons/lia";
 import { SiHackthebox } from "react-icons/si";
 
-export const generateStaticParams = async () => {
-  const res = await fetch(
-    "https://deshi-bazar-server.vercel.app/api/v1/products?categories="
-  );
-  const products = await res.json();
-  // console.log(products);
+// export const generateStaticParams = async () => {
+//   const res = await fetch(
+//     "https://deshi-bazar-server.vercel.app/api/v1/products?categories="
+//   );
+//   const products = await res.json();
+//   // console.log(products);
 
-  return products.slice(0, 10).map((product: TProduct) => ({
-    productId: product._id,
-  }));
-};
+//   return products.slice(0, 10).map((product: TProduct) => ({
+//     productId: product._id,
+//   }));
+// };
 
 const SingleProductPage = async ({ params }: TProductId) => {
   // console.log("params", params);

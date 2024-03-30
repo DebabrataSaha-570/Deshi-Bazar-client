@@ -4,6 +4,8 @@ import { TProduct } from "@/types";
 import Container from "@/components/ui/Container";
 import ProductCard from "@/components/ui/ProductCard";
 import CommonLayout from "@/app/(withCommonLayout)/layout";
+import { IoFilterSharp } from "react-icons/io5";
+import ProductFilter from "@/components/ui/ProductFilter";
 // import { useNavigation } from "next/navigation";
 
 export const metadata: Metadata = {
@@ -26,24 +28,61 @@ const ProductCategoryPage = async ({ params }: any) => {
 
   return (
     <CommonLayout>
-      <Container className="px-8 mt-10 mb-16">
-        <div>
-          <h2 className="text-3xl font-semibold">Our Collection of Products</h2>
-        </div>
+      <Container className="px-10">
+        <section className="flex gap-5">
+          {/* sidebar  */}
 
-        <div className="my-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-items-center">
-            {products.map((item: TProduct) => (
-              <ProductCard
-                key={item._id}
-                product={item}
-                showRating={true}
-              ></ProductCard>
-            ))}
+          <ProductFilter></ProductFilter>
+
+          {/* right side */}
+          <div className="z-30 mt-10">
+            <div className="flex items-center justify-between gap-5">
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                Our Collection of Products
+              </h2>
+              <label
+                htmlFor="filterSidebar"
+                className="btn btn-secondary  drawer-button lg:hidden btn-sm "
+              >
+                <IoFilterSharp />
+              </label>
+            </div>
+
+            <div className="my-10">
+              <div className="grid grid-cols-1 md:grid-cols-3  gap-5 justify-items-center">
+                {products.map((item: TProduct) => (
+                  <ProductCard
+                    key={item._id}
+                    product={item}
+                    showRating={true}
+                  ></ProductCard>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </Container>
     </CommonLayout>
+
+    // <CommonLayout>
+    //   <Container className="px-8 mt-10 mb-16">
+    //     <div>
+    //       <h2 className="text-3xl font-semibold">Our Collection of Products</h2>
+    //     </div>
+
+    //     <div className="my-10">
+    //       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-items-center">
+    //         {products.map((item: TProduct) => (
+    //           <ProductCard
+    //             key={item._id}
+    //             product={item}
+    //             showRating={true}
+    //           ></ProductCard>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </Container>
+    // </CommonLayout>
   );
 };
 

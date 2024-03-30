@@ -9,7 +9,6 @@ const PopularProductsHome = async () => {
   const res = await fetch(
     "https://deshi-bazar-server.vercel.app/api/v1/products",
     {
-      // const res = await fetch("http://localhost:5000/api/v1/products", {
       next: {
         revalidate: 30, // data will be fetched in every 30s
       },

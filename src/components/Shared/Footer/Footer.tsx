@@ -42,41 +42,7 @@ const Footer = () => {
                 <p className="text-gray-400">Sat – Thu: 9am – 8pm</p>
               </div>
             </div>
-            {/* <div>
-              <h3 className="text-xl font-semibold mb-8">Customer</h3>
-              <div className="space-y-3">
-                <Link
-                  href="/"
-                  className="block hover:text-[--lightGreen] transition duration-500"
-                >
-                  Help Center
-                </Link>
-                <Link
-                  href="/"
-                  className="block hover:text-[--lightGreen] transition duration-500"
-                >
-                  My Account
-                </Link>
-                <Link
-                  href="/"
-                  className="block hover:text-[--lightGreen] transition duration-500"
-                >
-                  Track My Order
-                </Link>
-                <Link
-                  href="/"
-                  className="block hover:text-[--lightGreen] transition duration-500"
-                >
-                  Return Policy
-                </Link>
-                <Link
-                  href="/"
-                  className="block hover:text-[--lightGreen] transition duration-500"
-                >
-                  Gift Cards
-                </Link>
-              </div>
-            </div> */}
+
             <div>
               <h3 className="text-xl font-semibold mb-8">About Us</h3>
 
@@ -117,31 +83,31 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-8">Trending Products</h3>
               <div className="space-y-3">
                 <Link
-                  href="/vegetables_fruits/65fd8cb99b12d4e001cece70"
+                  href="/products/vegetables_fruits/65fd8cb99b12d4e001cece70"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Red Tomato
                 </Link>
                 <Link
-                  href="/vegetables_fruits/65fd90f7bb0c2007e7001469"
+                  href="/products/vegetables_fruits/65fd90f7bb0c2007e7001469"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Gala Apple
                 </Link>
                 <Link
-                  href="/cooking/65fd99de1c24b5e41bfd4d86"
+                  href="/products/cooking/65fd99de1c24b5e41bfd4d86"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Chashi Chinigura Rice
                 </Link>
                 <Link
-                  href="/cooking/65fd9d40728112494e35f075"
+                  href="/products/cooking/65fd9d40728112494e35f075"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Radhuni Chicken Masala
                 </Link>
                 <Link
-                  href="/dairy/65fe511d91d50b1a3129c4cb"
+                  href="/products/dairy/65fe511d91d50b1a3129c4cb"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Aarong Butter
@@ -152,31 +118,31 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-8">Categories</h3>
               <div className="space-y-3">
                 <Link
-                  href="/vegetables_fruits"
+                  href="/products/vegetables_fruits"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Vegetables
                 </Link>
                 <Link
-                  href="/vegetables_fruits"
+                  href="/products/vegetables_fruits"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Fruits
                 </Link>
                 <Link
-                  href="/cooking"
+                  href="/products/cooking"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Cooking
                 </Link>
                 <Link
-                  href="/dairy"
+                  href="/products/dairy"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Dairy
                 </Link>
                 <Link
-                  href="/fish"
+                  href="/products/fish"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Fish
