@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const ProductFilter = () => {
+const ProductFilter = ({ params }: any) => {
   return (
     <div className="  ">
       <div className="drawer lg:drawer-open">
@@ -57,44 +57,46 @@ const ProductFilter = () => {
                 </label>
               </div>
             </div>
-            <div className="border p-5 mt-5">
-              <h3 className=" border-white border-l-black font-bold border-4 gap-3 px-3">
-                Categories
-              </h3>
-              <div className="form-control">
-                <label className=" cursor-pointer flex  items-center gap-3 mt-2">
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-secondary checkbox-sm"
-                  />
-                  <span className="label-text">Vegetables,Fruits</span>
-                </label>
+            {params.productCategory == "allProducts" && (
+              <div className="border p-5 mt-5">
+                <h3 className=" border-white border-l-black font-bold border-4 gap-3 px-3">
+                  Categories
+                </h3>
+                <div className="form-control">
+                  <label className=" cursor-pointer flex  items-center gap-3 mt-2">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-secondary checkbox-sm"
+                    />
+                    <span className="label-text">Vegetables,Fruits</span>
+                  </label>
 
-                <label className=" cursor-pointer flex  items-center gap-3 mt-2">
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-secondary checkbox-sm"
-                  />
-                  <span className="label-text">Cooking</span>
-                </label>
+                  <label className=" cursor-pointer flex  items-center gap-3 mt-2">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-secondary checkbox-sm"
+                    />
+                    <span className="label-text">Cooking</span>
+                  </label>
 
-                <label className=" cursor-pointer flex  items-center gap-3 mt-2">
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-secondary checkbox-sm"
-                  />
-                  <span className="label-text">Fish</span>
-                </label>
+                  <label className=" cursor-pointer flex  items-center gap-3 mt-2">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-secondary checkbox-sm"
+                    />
+                    <span className="label-text">Fish</span>
+                  </label>
 
-                <label className=" cursor-pointer flex  items-center gap-3 mt-2">
-                  <input
-                    type="checkbox"
-                    className="checkbox checkbox-secondary checkbox-sm"
-                  />
-                  <span className="label-text">Dairy</span>
-                </label>
+                  <label className=" cursor-pointer flex  items-center gap-3 mt-2">
+                    <input
+                      type="checkbox"
+                      className="checkbox checkbox-secondary checkbox-sm"
+                    />
+                    <span className="label-text">Dairy</span>
+                  </label>
+                </div>
               </div>
-            </div>
+            )}
             <div className="border p-5 mt-5">
               <h3 className=" border-white border-l-black font-bold border-4 gap-3 px-3">
                 Ratings

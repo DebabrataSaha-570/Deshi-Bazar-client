@@ -32,17 +32,17 @@ const ProductCategoryPage = async ({ params }: any) => {
         <section className="flex gap-5">
           {/* sidebar  */}
 
-          <ProductFilter></ProductFilter>
+          <ProductFilter params={params}></ProductFilter>
 
           {/* right side */}
           <div className="z-30 mt-10">
             <div className="flex items-center justify-between gap-5">
-              <h2 className="text-2xl md:text-3xl font-semibold">
+              <h2 className="text-3xl md:text-3xl font-semibold">
                 Our Collection of Products
               </h2>
               <label
                 htmlFor="filterSidebar"
-                className="btn btn-secondary  drawer-button lg:hidden btn-sm "
+                className="btn btn-secondary  drawer-button lg:hidden btn-md text-xl "
               >
                 <IoFilterSharp />
               </label>
