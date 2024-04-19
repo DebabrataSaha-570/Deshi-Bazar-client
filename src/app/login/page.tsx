@@ -4,20 +4,39 @@ import React from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { loginUser } from "../services/actions/loginUser";
+import { storeUserInfo } from "../services/auth.service";
 
-type UserLoginData = {
+export type UserLoginData = {
   email: string;
   password: string;
 };
 
 const LoginPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
 
     formState: { errors },
   } = useForm<UserLoginData>();
-  const onSubmit: SubmitHandler<UserLoginData> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<UserLoginData> = async (data) => {
+    try {
+      const res = await loginUser(data);
+      if (res?.success) {
+        storeUserInfo({ token: res?.token });
+        toast.success(res?.message);
+        router.push("/");
+      } else {
+        toast.error(res?.message);
+      }
+    } catch (err: any) {
+      //   console.log(err.message);
+      toast.error("Something went wrong!!");
+    }
+  };
 
   return (
     <CommonLayout>

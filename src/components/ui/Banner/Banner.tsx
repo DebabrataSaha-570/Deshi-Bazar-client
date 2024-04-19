@@ -66,12 +66,14 @@ const Banner = () => {
     <section>
       <Slider {...settings}>
         <div className="w-full ">
-          <div className="h-[620px] relative ">
+          <div className="h-[85vh] relative ">
             <Image
               src={image5}
               alt="banner_image_1"
-              layout="fill"
-              objectFit="cover"
+              fill
+              // layout="fill"
+              style={{ objectFit: "cover" }}
+              // objectFit="cover"
             ></Image>
 
             <div className="absolute inset-0 flex justify-center items-center ">
@@ -121,13 +123,15 @@ const Banner = () => {
         </div>
 
         <div className="w-full ">
-          <div className="h-[620px] relative ">
+          <div className="h-[85vh] relative ">
             <Image
               src={image6}
               // src={image5}
               alt="banner_image_1"
-              layout="fill"
-              objectFit="cover"
+              fill
+              // layout="fill"
+              style={{ objectFit: "cover" }}
+              // objectFit="cover"
             ></Image>
 
             <div className="absolute inset-0 flex items-center justify-center">

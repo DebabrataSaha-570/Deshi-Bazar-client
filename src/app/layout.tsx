@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Quicksand, Roboto } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const quickSand = Quicksand({ weight: "500", subsets: ["latin"] });
 // const quickSand = Quicksand({ weight: "500", subsets: ["latin"] });
@@ -30,7 +31,12 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
       </head>
-      <body className={quickSand.className}>{children}</body>
+      <body className={quickSand.className}>
+        <>
+          <Toaster position="top-center" />
+          {children}
+        </>
+      </body>
     </html>
   );
 }

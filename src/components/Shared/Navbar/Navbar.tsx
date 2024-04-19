@@ -1,9 +1,16 @@
+"use client";
+
 import Container from "@/components/ui/Container";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
+  const AuthButton = dynamic(
+    () => import("@/components/ui/AuthButton/AuthButton"),
+    { ssr: false }
+  );
   return (
     <>
       <section className="bg-primary text-[--white] sticky top-0 z-50">
@@ -85,14 +92,21 @@ const Navbar = () => {
                   <Link href="/flashSale">Flash Sale</Link>
                 </li>
                 <li>
-                  <Link href="/login">Login</Link>
-                </li>
-                <li>
                   <Link href="/contact">Contact Us</Link>
                 </li>
                 <li>
                   <Link href="/Dashboard">Dashboard</Link>
                 </li>
+                <AuthButton></AuthButton>
+                {/* {islogin ? (
+                  <li>
+                    <span onClick={handleLogout}>Logout</span>
+                  </li>
+                ) : (
+                  <li>
+                    <Link href="/login">Login</Link>
+                  </li>
+                )} */}
               </ul>
             </div>
           </div>

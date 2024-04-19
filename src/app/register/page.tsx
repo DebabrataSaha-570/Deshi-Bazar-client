@@ -4,8 +4,13 @@ import React from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { registerUser } from "../services/actions/registerUser";
+import { storeUserInfo } from "../services/auth.service";
+import { loginUser } from "../services/actions/loginUser";
 
-type UserRegisterData = {
+export type UserRegisterData = {
   name: string;
   email: string;
   password: string;
@@ -18,7 +23,31 @@ const RegisterPage = () => {
 
     formState: { errors },
   } = useForm<UserRegisterData>();
-  const onSubmit: SubmitHandler<UserRegisterData> = (data) => console.log(data);
+
+  const router = useRouter();
+
+  const onSubmit: SubmitHandler<UserRegisterData> = async (data) => {
+    try {
+      const res = await registerUser(data);
+      console.log("res for register", res);
+
+      if (res?.success) {
+        toast.success(res?.message);
+        const response = await loginUser({
+          email: data.email,
+          password: data.password,
+        });
+        if (response?.success) {
+          storeUserInfo({ token: response?.token });
+          router.push("/");
+        }
+      } else {
+        toast.error(res?.message);
+      }
+    } catch (err: any) {
+      toast.error("Something Went Wrong!!");
+    }
+  };
 
   return (
     <CommonLayout>
