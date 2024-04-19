@@ -85,7 +85,7 @@ const Navbar = () => {
                   <Link href="/flashSale">Flash Sale</Link>
                 </li>
                 <li>
-                  <Link href="/about">About Us</Link>
+                  <Link href="/login">Login</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>
