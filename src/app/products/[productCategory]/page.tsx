@@ -6,6 +6,8 @@ import ProductCard from "@/components/ui/ProductCard";
 import CommonLayout from "@/app/(withCommonLayout)/layout";
 import { IoFilterSharp } from "react-icons/io5";
 import ProductFilter from "@/components/ui/ProductFilter";
+import { useRouter } from "next/navigation";
+import { isLoggedIn } from "@/app/services/auth.service";
 // import { useNavigation } from "next/navigation";
 
 export const metadata: Metadata = {

@@ -5,18 +5,25 @@ import Link from "next/link";
 import { FaListUl } from "react-icons/fa6";
 import { drawerItems } from "@/utils/drawer-items";
 import { UserRole } from "@/types";
-import { getUserInfo } from "@/app/services/auth.service";
-import { usePathname } from "next/navigation";
+import { getUserInfo, isLoggedIn } from "@/app/services/auth.service";
+import { usePathname, useRouter } from "next/navigation";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [userRole, setUserRole] = useState("");
 
   const pathName = usePathname();
 
+  const router = useRouter();
+
+  if (!isLoggedIn()) {
+    router.push("/login");
+  }
+
   useEffect(() => {
-    const { role } = getUserInfo() as any;
-    console.log(role);
-    setUserRole(role);
+    if (isLoggedIn()) {
+      const { role } = getUserInfo() as any;
+      setUserRole(role);
+    }
   }, []);
   return (
     <div>
