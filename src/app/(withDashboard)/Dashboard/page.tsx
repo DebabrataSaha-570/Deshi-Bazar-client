@@ -39,8 +39,8 @@ const DashBoard = async () => {
                       <Image
                         src={product.image_url}
                         alt="product_image"
-                        objectFit="cover"
-                        layout="fill"
+                        fill
+                        style={{ objectFit: "cover" }}
                       ></Image>
                     </div>
                   </div>{" "}
@@ -48,7 +48,7 @@ const DashBoard = async () => {
                 </td>
                 <td>{product.categories}</td>
                 <td className="underline">
-                  <Link href={`/${product.categories}/${product._id}`}>
+                  <Link href={`products/${product.categories}/${product._id}`}>
                     {product._id}
                   </Link>
                 </td>

@@ -1,3 +1,6 @@
+import { USER_ROLE } from "@/constants/role";
+import { IconType } from "react-icons";
+
 export type TProduct = {
   _id: string;
   title: string;
@@ -19,4 +22,14 @@ export type TProductId = {
   params: {
     productId: string;
   };
+};
+
+export type UserRole = keyof typeof USER_ROLE;
+
+export type DrawerItems = {
+  title: string;
+  path: string;
+  parentPath?: string;
+  icon?: IconType;
+  child?: DrawerItems[];
 };

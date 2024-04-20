@@ -1,11 +1,23 @@
-import React, { ReactNode } from "react";
+"use client";
+import React, { ReactNode, useEffect, useState } from "react";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 import Link from "next/link";
 import { FaListUl } from "react-icons/fa6";
-// import { useRouter } from "next/router";
+import { drawerItems } from "@/utils/drawer-items";
+import { UserRole } from "@/types";
+import { getUserInfo } from "@/app/services/auth.service";
+import { usePathname } from "next/navigation";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
-  //   const router = useRouter();
+  const [userRole, setUserRole] = useState("");
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    const { role } = getUserInfo() as any;
+    console.log(role);
+    setUserRole(role);
+  }, []);
   return (
     <div>
       <DashboardNavbar></DashboardNavbar>
@@ -27,18 +39,25 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           <ul className="menu p-4  w-72 min-h-full bg-secondary text-white mt-[60px] lg:mt-0">
             {/* Sidebar content here */}
 
-            <Link
-              href="/Dashboard"
-              className="px-4 py-3 text-base rounded-lg mb-3 bg-primary"
-            >
-              <h3 className="flex items-center gap-3">
-                {" "}
-                <span className="text-xl">
-                  <FaListUl />
-                </span>{" "}
-                All Supplies
-              </h3>
-            </Link>
+            {drawerItems(userRole as UserRole).map((item, index) => (
+              <Link
+                key={index}
+                href={item.path}
+                className={
+                  pathName === item.path
+                    ? "px-4 py-3 text-base rounded-lg mb-3 bg-primary"
+                    : "px-4 py-3 text-base rounded-lg mb-3 bg-secondary"
+                }
+              >
+                <h3 className="flex items-center gap-3">
+                  {" "}
+                  <span className="text-xl">
+                    {item.icon && <item.icon />}
+                  </span>{" "}
+                  {item.title}
+                </h3>
+              </Link>
+            ))}
           </ul>
         </div>
       </div>

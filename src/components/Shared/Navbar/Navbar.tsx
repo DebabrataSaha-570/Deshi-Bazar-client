@@ -82,32 +82,27 @@ const Navbar = () => {
                   <Link href="/">Home</Link>
                 </li>
 
-                <li>
+                {/* <li>
                   <Link href="/categories">Categories</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/products/allProducts">Products</Link>
                 </li>
                 <li>
                   <Link href="/flashSale">Flash Sale</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/contact">Contact Us</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/Dashboard">Dashboard</Link>
                 </li>
-                <AuthButton></AuthButton>
-                {/* {islogin ? (
-                  <li>
-                    <span onClick={handleLogout}>Logout</span>
-                  </li>
-                ) : (
-                  <li>
-                    <Link href="/login">Login</Link>
-                  </li>
-                )} */}
               </ul>
+            </div>
+
+            <div className="navbar-end">
+              {/* <a className="btn">Button</a> */}
+              <AuthButton></AuthButton>
             </div>
           </div>
         </Container>

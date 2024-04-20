@@ -1,11 +1,36 @@
+"use client";
+import { getUserInfo, removeUser } from "@/app/services/auth.service";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaGear } from "react-icons/fa6";
 import { MdLogout } from "react-icons/md";
+import AuthButton from "../ui/AuthButton/AuthButton";
+import { FaUserAlt } from "react-icons/fa";
+
+type TUser = {
+  email: string;
+  name: string;
+  role: string;
+  iat: number;
+  exp: number;
+};
 
 const DashboardNavbar = () => {
+  const [userInfo, setUser] = useState<TUser | null>(null);
+  const router = useRouter();
+  useEffect(() => {
+    const user = getUserInfo() as any;
+    console.log(user);
+    setUser(user);
+  }, []);
+
+  const handleLogout = () => {
+    removeUser();
+    router.refresh();
+  };
   return (
     <nav className="bg-secondary sticky top-0 z-50">
       <div className="navbar ">
@@ -41,9 +66,12 @@ const DashboardNavbar = () => {
           </Link>
         </div>
         <div className="flex-none text-gray-300">
+          {/* <AuthButton></AuthButton> */}
           <div className="dropdown dropdown-end text-end mx-2">
-            <h2 className=" text-sm md:text-base font-semibold">Debabrata</h2>
-            <p className="text-sm">Admin</p>
+            <h2 className=" text-sm md:text-base font-semibold capitalize">
+              {userInfo?.name}
+            </h2>
+            <p className="text-sm">{userInfo?.role}</p>
           </div>
           <div className="dropdown dropdown-end">
             <div
@@ -52,39 +80,14 @@ const DashboardNavbar = () => {
               className="btn btn-ghost btn-circle avatar w-15"
             >
               <div className=" rounded-full">
-                <Image
-                  width={50}
-                  height={50}
-                  objectFit="cover"
-                  alt="Admin Image"
-                  src="https://avatars.githubusercontent.com/u/76751534?v=4"
-                />
+                <FaUserAlt className="text-[30px]" />
               </div>
             </div>
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-secondary text-white rounded-box w-52 space-y-2"
             >
-              <li>
-                <a>
-                  {" "}
-                  <span className="text-xl">
-                    {" "}
-                    <CgProfile />
-                  </span>{" "}
-                  Profile
-                </a>
-              </li>
-              <li>
-                <a>
-                  {" "}
-                  <span className="text-xl">
-                    <FaGear />
-                  </span>{" "}
-                  Settings
-                </a>
-              </li>
-              <li>
+              <li onClick={handleLogout}>
                 <a>
                   {" "}
                   <span className="text-xl">

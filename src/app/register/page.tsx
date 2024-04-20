@@ -14,6 +14,7 @@ export type UserRegisterData = {
   name: string;
   email: string;
   password: string;
+  role: string;
 };
 
 const RegisterPage = () => {
@@ -27,9 +28,10 @@ const RegisterPage = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<UserRegisterData> = async (data) => {
+    const modifiedData = { ...data, role: "user" };
+
     try {
-      const res = await registerUser(data);
-      console.log("res for register", res);
+      const res = await registerUser(modifiedData);
 
       if (res?.success) {
         toast.success(res?.message);
