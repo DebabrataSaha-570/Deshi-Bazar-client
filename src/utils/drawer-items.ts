@@ -9,8 +9,14 @@ export const drawerItems = (role: UserRole): DrawerItems[] => {
     case USER_ROLE.ADMIN:
       roleMenus.push(
         {
-          title: "All Products",
+          title: "Dashboard",
           path: `/Dashboard`,
+          //   path: `/dashboard/products/${role}`,
+          icon: FaListUl,
+        },
+        {
+          title: "All Products",
+          path: `/Dashboard/products`,
           //   path: `/dashboard/products/${role}`,
           icon: FaListUl,
         },
@@ -25,17 +31,31 @@ export const drawerItems = (role: UserRole): DrawerItems[] => {
           path: `/Dashboard/add-product`,
           //   path: `/dashboard/add-product/${role}`,
           icon: FaListUl,
+        },
+        {
+          title: "All Users",
+          path: `/Dashboard/users`,
+          //   path: `/dashboard/orders/${role}`,
+          icon: FaListUl,
         }
       );
       break;
 
     case USER_ROLE.USER:
-      roleMenus.push({
-        title: "My Orders",
-        path: `/Dashboard/my-orders`,
-        //   path: `/dashboard/products/${role}`,
-        icon: FaListUl,
-      });
+      roleMenus.push(
+        {
+          title: "Dashboard",
+          path: `/Dashboard`,
+          //   path: `/dashboard/products/${role}`,
+          icon: FaListUl,
+        },
+        {
+          title: "My Orders",
+          path: `/Dashboard/my-orders`,
+          //   path: `/dashboard/products/${role}`,
+          icon: FaListUl,
+        }
+      );
       break;
 
     default:

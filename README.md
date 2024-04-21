@@ -58,6 +58,13 @@ npm start  # or yarn start
 
 ```
 
+4. **Admin Access**
+
+```
+Email: admin@gmail.com
+Password: 123456
+```
+
 [Live Link](https://deshi-bazar-client.vercel.app/)
 
 You can see server side code in [Deshi Bazar Server](https://github.com/DebabrataSaha-570/Deshi-Bazar-server)

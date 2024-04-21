@@ -15,12 +15,14 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
   const router = useRouter();
 
-  if (!isLoggedIn()) {
-    router.push("/login");
-  }
+  // if (!isLoggedIn()) {
+  //   router.push("/login");
+  // }
 
   useEffect(() => {
-    if (isLoggedIn()) {
+    if (!isLoggedIn()) {
+      router.push("/login");
+    } else if (isLoggedIn()) {
       const { role } = getUserInfo() as any;
       setUserRole(role);
     }
@@ -46,25 +48,26 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
           <ul className="menu p-4  w-72 min-h-full bg-secondary text-white mt-[60px] lg:mt-0">
             {/* Sidebar content here */}
 
-            {drawerItems(userRole as UserRole).map((item, index) => (
-              <Link
-                key={index}
-                href={item.path}
-                className={
-                  pathName === item.path
-                    ? "px-4 py-3 text-base rounded-lg mb-3 bg-primary"
-                    : "px-4 py-3 text-base rounded-lg mb-3 bg-secondary"
-                }
-              >
-                <h3 className="flex items-center gap-3">
-                  {" "}
-                  <span className="text-xl">
-                    {item.icon && <item.icon />}
-                  </span>{" "}
-                  {item.title}
-                </h3>
-              </Link>
-            ))}
+            {userRole &&
+              drawerItems(userRole as UserRole).map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.path}
+                  className={
+                    pathName === item.path
+                      ? "px-4 py-3 text-base rounded-lg mb-3 bg-primary"
+                      : "px-4 py-3 text-base rounded-lg mb-3 bg-secondary"
+                  }
+                >
+                  <h3 className="flex items-center gap-3">
+                    {" "}
+                    <span className="text-xl">
+                      {item.icon && <item.icon />}
+                    </span>{" "}
+                    {item.title}
+                  </h3>
+                </Link>
+              ))}
           </ul>
         </div>
       </div>

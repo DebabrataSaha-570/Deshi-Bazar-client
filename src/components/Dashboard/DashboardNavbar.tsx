@@ -83,7 +83,7 @@ const DashboardNavbar = () => {
                 <FaUserAlt className="text-[30px]" />
               </div>
             </div>
-            <ul
+            {/* <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-secondary text-white rounded-box w-52 space-y-2"
             >
@@ -96,7 +96,7 @@ const DashboardNavbar = () => {
                   Logout
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
