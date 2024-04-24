@@ -23,6 +23,12 @@ export type TProductId = {
     productId: string;
   };
 };
+export type TUser = {
+  _id: string;
+  name: string;
+  email: string;
+  role: string;
+};
 
 export type UserRole = keyof typeof USER_ROLE;
 

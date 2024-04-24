@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/ui/Container";
-import React from "react";
+import React, { useState } from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -18,6 +18,8 @@ export type UserRegisterData = {
 };
 
 const RegisterPage = () => {
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -31,6 +33,7 @@ const RegisterPage = () => {
     const modifiedData = { ...data, role: "user" };
 
     try {
+      setLoading(true);
       const res = await registerUser(modifiedData);
 
       if (res?.success) {
@@ -39,6 +42,7 @@ const RegisterPage = () => {
           email: data.email,
           password: data.password,
         });
+        setLoading(false);
         if (response?.success) {
           storeUserInfo({ token: response?.token });
           router.push("/");
@@ -48,6 +52,8 @@ const RegisterPage = () => {
       }
     } catch (err: any) {
       toast.error("Something Went Wrong!!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -113,9 +119,15 @@ const RegisterPage = () => {
                 )}
               </label>
 
-              <button type="submit" className="btn btn-primary w-full mt-5">
-                Sign up
-              </button>
+              {loading ? (
+                <div className="w-full mt-5 text-center">
+                  <span className="loading loading-spinner loading-lg "></span>
+                </div>
+              ) : (
+                <button type="submit" className="btn btn-primary w-full mt-5">
+                  Sign up
+                </button>
+              )}
 
               <p className="text-center mt-3">
                 Already have an account?{" "}

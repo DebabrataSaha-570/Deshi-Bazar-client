@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/ui/Container";
-import React from "react";
+import React, { useState } from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -16,6 +16,7 @@ export type UserLoginData = {
 
 const LoginPage = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -24,17 +25,22 @@ const LoginPage = () => {
   } = useForm<UserLoginData>();
   const onSubmit: SubmitHandler<UserLoginData> = async (data) => {
     try {
+      setLoading(true);
       const res = await loginUser(data);
       if (res?.success) {
         storeUserInfo({ token: res?.token });
+        setLoading(false);
         toast.success(res?.message);
         router.push("/");
       } else {
         toast.error(res?.message);
+        setLoading(false);
       }
     } catch (err: any) {
       //   console.log(err.message);
       toast.error("Something went wrong!!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -86,9 +92,15 @@ const LoginPage = () => {
                 )}
               </label>
 
-              <button type="submit" className="btn btn-primary w-full mt-5">
-                Login
-              </button>
+              {loading ? (
+                <div className="w-full mt-5 text-center">
+                  <span className="loading loading-spinner loading-lg "></span>
+                </div>
+              ) : (
+                <button type="submit" className="btn btn-primary w-full mt-5">
+                  Login
+                </button>
+              )}
 
               <p className="text-center mt-3">
                 Don&apos;t have an account ?{" "}

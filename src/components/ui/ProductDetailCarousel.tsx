@@ -79,7 +79,6 @@ const ProductDetailCarousel = ({ image }: { image: string }) => {
               src={image}
               alt="product_image"
             ></Image>
-            {/* <img className=" " src={image} /> */}
           </div>
           <div className="">
             <Image

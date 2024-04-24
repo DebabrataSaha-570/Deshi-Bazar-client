@@ -33,7 +33,7 @@ export default function RootLayout({
       </head>
       <body className={quickSand.className}>
         <>
-          <Toaster position="top-center" />
+          <Toaster position="top-right" />
           {children}
         </>
       </body>

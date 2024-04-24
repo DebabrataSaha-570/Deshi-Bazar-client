@@ -5,7 +5,7 @@ import {
 } from "@/app/services/auth.service";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaShoppingCart, FaUserAlt } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
@@ -14,7 +14,6 @@ const AuthButton = () => {
   const islogin = isLoggedIn();
   const router = useRouter();
   const userInfo: any = getUserInfo();
-  console.log("user info", userInfo);
   const handleLogout = () => {
     removeUser();
     router.refresh();
