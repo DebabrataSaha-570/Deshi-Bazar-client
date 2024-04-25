@@ -23,7 +23,6 @@ const DashboardNavbar = () => {
   const router = useRouter();
   useEffect(() => {
     const user = getUserInfo() as any;
-    console.log(user);
     setUser(user);
   }, []);
 

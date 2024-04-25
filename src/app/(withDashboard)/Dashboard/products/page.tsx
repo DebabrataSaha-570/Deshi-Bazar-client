@@ -2,6 +2,7 @@ import React from "react";
 import { TProduct } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import DashboardProductsAction from "@/components/Dashboard/DashboardProductsAction";
 const DashboardAllProductsPage = async () => {
   const res = await fetch(
     "https://deshi-bazar-server.vercel.app/api/v1/products",
@@ -24,6 +25,7 @@ const DashboardAllProductsPage = async () => {
               <th>Category</th>
               <th>Product ID</th>
               <th>Price</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -51,6 +53,9 @@ const DashboardAllProductsPage = async () => {
                   </Link>
                 </td>
                 <td> &#2547; {product.price}</td>
+                <DashboardProductsAction
+                  product={product}
+                ></DashboardProductsAction>
               </tr>
             ))}
           </tbody>

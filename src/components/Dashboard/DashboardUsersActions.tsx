@@ -22,8 +22,17 @@ const DashboardUsersActions = ({ user }: { user: TUser }) => {
     }
   };
 
-  const updateUser = async (user: TUser) => {
-    console.log(user);
+  const updateUser = async (id: string) => {
+    const res = await fetch(
+      `https://deshi-bazar-server.vercel.app/api/v1/user/${id}`,
+      {
+        method: "PUT",
+      }
+    );
+    const result = await res.json();
+    if (result) {
+      router.refresh();
+    }
   };
   return (
     <td>
@@ -33,7 +42,7 @@ const DashboardUsersActions = ({ user }: { user: TUser }) => {
         </button>
       ) : (
         <button
-          onClick={() => updateUser(user)}
+          onClick={() => updateUser(user._id)}
           className="btn btn-sm btn-primary"
         >
           Make Admin
@@ -41,7 +50,7 @@ const DashboardUsersActions = ({ user }: { user: TUser }) => {
       )}
       <button
         onClick={() => deleteUser(user._id)}
-        className="btn btn-sm ml-2 btn-error"
+        className="btn btn-sm mt-2  md:mt-0 ml-2 btn-error"
       >
         <FaTrashAlt />
       </button>

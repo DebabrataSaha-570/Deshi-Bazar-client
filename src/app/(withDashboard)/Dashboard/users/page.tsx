@@ -45,16 +45,6 @@ const DashboardAllUsersPage = async () => {
                   user={user}
                   //   router={router}
                 ></DashboardUsersActions>
-
-                {/* <td>
-                  <button className="btn btn-sm btn-primary">Make Admin</button>
-                  <button
-                    onClick={() => deleteUser(user._id)}
-                    className="btn btn-sm ml-2 btn-error"
-                  >
-                    <FaTrashAlt />
-                  </button>
-                </td> */}
               </tr>
             ))}
           </tbody>

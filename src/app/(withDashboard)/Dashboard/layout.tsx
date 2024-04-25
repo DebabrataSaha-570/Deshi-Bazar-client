@@ -33,7 +33,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
 
       {/* sidebar  */}
 
-      <div className="drawer lg:drawer-open z-10">
+      <div className="drawer lg:drawer-open z-40">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content mx-8 my-5">
           {/* Page content here */}
@@ -45,7 +45,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4  w-72 min-h-full bg-secondary text-white mt-[60px] lg:mt-0">
+          <ul className="menu p-4  w-72 min-h-full h-full bg-secondary text-white mt-[60px] lg:mt-0">
             {/* Sidebar content here */}
 
             {userRole &&
