@@ -8,7 +8,17 @@ type AutoButtonProps = {
   onClick: () => void;
 };
 
-const ProductDetailCarousel = ({ image }: { image: string }) => {
+const ProductDetailCarousel = ({
+  image1,
+  image2,
+  image3,
+  image4,
+}: {
+  image1: string;
+  image2: string;
+  image3: string;
+  image4: string;
+}) => {
   const PreviousBtn = ({ className, onClick }: AutoButtonProps) => {
     return (
       <>
@@ -33,7 +43,7 @@ const ProductDetailCarousel = ({ image }: { image: string }) => {
       return (
         <a>
           <Image
-            src={image}
+            src={image1}
             alt="product_image"
             width={200}
             height={200}
@@ -76,7 +86,7 @@ const ProductDetailCarousel = ({ image }: { image: string }) => {
               height={0}
               sizes="100vw"
               style={{ width: "100%", height: "100%" }}
-              src={image}
+              src={image1}
               alt="product_image"
             ></Image>
           </div>
@@ -86,18 +96,7 @@ const ProductDetailCarousel = ({ image }: { image: string }) => {
               height={0}
               sizes="100vw"
               style={{ width: "100%", height: "100%" }}
-              src={image}
-              alt="product_image"
-            ></Image>
-            {/* <img className="w-full h-full object-cover" src={image} /> */}
-          </div>
-          <div className="">
-            <Image
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "100%" }}
-              src={image}
+              src={image2}
               alt="product_image"
             ></Image>
             {/* <img className="w-full h-full object-cover" src={image} /> */}
@@ -108,7 +107,18 @@ const ProductDetailCarousel = ({ image }: { image: string }) => {
               height={0}
               sizes="100vw"
               style={{ width: "100%", height: "100%" }}
-              src={image}
+              src={image3}
+              alt="product_image"
+            ></Image>
+            {/* <img className="w-full h-full object-cover" src={image} /> */}
+          </div>
+          <div className="">
+            <Image
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "100%" }}
+              src={image4}
               alt="product_image"
             ></Image>
             {/* <img className="w-full h-full object-cover" src={image} /> */}

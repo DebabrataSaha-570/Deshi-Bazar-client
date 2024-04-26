@@ -5,12 +5,13 @@ type TAddProduct = {
   availability: string;
   title: string;
   quantity: number;
+  previous_price: number;
   price: number;
   first_image: string;
   second_image: string;
   third_image: string;
   fourth_image: string;
-  description: string;
+  description: string[];
 };
 
 export const addProduct = async (addProductData: TAddProduct) => {

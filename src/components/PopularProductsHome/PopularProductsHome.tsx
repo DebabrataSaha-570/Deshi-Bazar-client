@@ -17,7 +17,7 @@ const PopularProductsHome = async () => {
   const products = await res.json();
 
   const popularProducts = products.filter(
-    (item: TProduct) => item.ratings == 5
+    (item: TProduct) => item.availability == "Available"
   );
 
   const dairyProducts = popularProducts.filter(

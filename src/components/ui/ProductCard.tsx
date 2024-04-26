@@ -52,7 +52,7 @@ const ProductCard = ({
       <div className="  rounded-md  cursor-pointer  h-[420px] p-3 border hover:border-black transition duration-500">
         <div className="relative">
           <Image
-            src={product.image_url}
+            src={product.first_image}
             alt="product_image"
             width={0}
             height={0}
@@ -85,7 +85,7 @@ const ProductCard = ({
           <div className="rating rating-md rating-half">
             {generateRatingInputs(product.ratings)}
             <span className="text-gray-500 mx-3">
-              ({product.total_reviews})
+              ({product.reviews.length})
             </span>
           </div>
         )}

@@ -16,7 +16,6 @@ const DashboardUsersActions = ({ user }: { user: TUser }) => {
       }
     );
     const result = await res.json();
-    console.log(result);
     if (result) {
       router.refresh();
     }

@@ -10,7 +10,6 @@ const FlashSaleHome = async () => {
   const res = await fetch(
     "https://deshi-bazar-server.vercel.app/api/v1/products",
     {
-      // const res = await fetch("http://localhost:5000/api/v1/products", {
       next: {
         revalidate: 30, // data will be load in every 30s
       },
@@ -20,19 +19,19 @@ const FlashSaleHome = async () => {
 
   const vegetableFlashProducts = products.filter(
     (item: TProduct) =>
-      item.flash_sale == true && item.categories == "vegetables_fruits"
+      item.flash_sale && item.categories == "vegetables_fruits"
   );
 
   const cookingFlashProducts = products.filter(
-    (item: TProduct) => item.flash_sale == true && item.categories == "cooking"
+    (item: TProduct) => item.flash_sale && item.categories == "cooking"
   );
 
   const dairyFlashProducts = products.filter(
-    (item: TProduct) => item.flash_sale == true && item.categories == "dairy"
+    (item: TProduct) => item.flash_sale && item.categories == "dairy"
   );
 
   const fishFlashProducts = products.filter(
-    (item: TProduct) => item.flash_sale == true && item.categories == "fish"
+    (item: TProduct) => item.flash_sale && item.categories == "fish"
   );
 
   return (

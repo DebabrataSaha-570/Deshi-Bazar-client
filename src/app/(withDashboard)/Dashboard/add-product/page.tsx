@@ -11,6 +11,7 @@ type FormInputs = {
   categories: string;
   flash_sale: string;
   availability: string;
+  previous_price: number;
   price: number;
   first_image: string;
   second_image: string;
@@ -39,9 +40,18 @@ const DashboardAddProductPage = () => {
     reset();
   };
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    const descriptionLines = data.description
+      .split("\n")
+      .filter((line) => line.trim() !== "");
+
+    const modifiedData = {
+      ...data,
+      description: descriptionLines,
+      reviews: [],
+    };
     try {
       setLoading(true);
-      const result = await addProduct(data);
+      const result = await addProduct(modifiedData);
       if (result?.insertedId) {
         toast.success("Product Added Successfully");
         reset();
@@ -52,7 +62,6 @@ const DashboardAddProductPage = () => {
       }
     } catch (err) {
       setLoading(false);
-      console.log(err);
       toast.error("Something went wrong!!");
     }
   };
@@ -131,13 +140,13 @@ const DashboardAddProductPage = () => {
                 </span>
               </div>
               <input
-                {...register("price", { required: true })}
+                {...register("previous_price", { required: true })}
                 type="number"
                 placeholder="enter previous price.."
                 className="input input-bordered w-full "
               />
-              {errors.quantity_unit && (
-                <span className="text-red-500">Quantity Unit is required</span>
+              {errors.previous_price && (
+                <span className="text-red-500">Previous Price is required</span>
               )}
             </label>
 

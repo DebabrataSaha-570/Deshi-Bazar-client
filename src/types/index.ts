@@ -1,6 +1,13 @@
 import { USER_ROLE } from "@/constants/role";
 import { IconType } from "react-icons";
 
+type Review = {
+  name: string;
+  email: string;
+  ratings: number;
+  comment: string;
+};
+
 export type TProduct = {
   _id: string;
   title: string;
@@ -14,8 +21,13 @@ export type TProduct = {
   flash_sale: boolean;
   remaining_time: number | null;
   image_url: string;
+  first_image: string;
+  second_image: string;
+  third_image: string;
+  fourth_image: string;
   availability: string;
   description: string[];
+  reviews: Review[];
 };
 
 export type TProductId = {

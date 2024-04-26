@@ -1,4 +1,5 @@
 import { FaListUl } from "react-icons/fa6";
+import { FaPlus, FaUsers, FaClipboardList, FaHome } from "react-icons/fa";
 import { USER_ROLE } from "@/constants/role";
 import { DrawerItems, UserRole } from "@/types";
 
@@ -12,7 +13,7 @@ export const drawerItems = (role: UserRole): DrawerItems[] => {
           title: "Dashboard",
           path: `/Dashboard`,
           //   path: `/dashboard/products/${role}`,
-          icon: FaListUl,
+          icon: FaHome,
         },
         {
           title: "All Products",
@@ -24,19 +25,19 @@ export const drawerItems = (role: UserRole): DrawerItems[] => {
           title: "All Orders",
           path: `/Dashboard/orders`,
           //   path: `/dashboard/orders/${role}`,
-          icon: FaListUl,
+          icon: FaClipboardList,
         },
         {
           title: "Add Product",
           path: `/Dashboard/add-product`,
           //   path: `/dashboard/add-product/${role}`,
-          icon: FaListUl,
+          icon: FaPlus,
         },
         {
           title: "All Users",
           path: `/Dashboard/users`,
           //   path: `/dashboard/orders/${role}`,
-          icon: FaListUl,
+          icon: FaUsers,
         }
       );
       break;
@@ -47,13 +48,13 @@ export const drawerItems = (role: UserRole): DrawerItems[] => {
           title: "Dashboard",
           path: `/Dashboard`,
           //   path: `/dashboard/products/${role}`,
-          icon: FaListUl,
+          icon: FaHome,
         },
         {
           title: "My Orders",
           path: `/Dashboard/my-orders`,
           //   path: `/dashboard/products/${role}`,
-          icon: FaListUl,
+          icon: FaClipboardList,
         }
       );
       break;

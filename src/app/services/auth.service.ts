@@ -12,10 +12,8 @@ export const storeUserInfo = ({ token }: { token: string }) => {
 
 export const getUserInfo = () => {
   const authToken = getFromLocalStorage(authKey);
-  //   console.log("authToken", authToken);
   if (authToken) {
     const decodedData = decodedToken(authToken);
-    // console.log("decoded Data", decodedData);
     return decodedData;
   }
 };

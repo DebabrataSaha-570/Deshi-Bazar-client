@@ -37,7 +37,7 @@ const DashboardAllProductsPage = async () => {
                   <div className="avatar">
                     <div className="w-24 rounded-xl">
                       <Image
-                        src={product.image_url}
+                        src={product.first_image}
                         alt="product_image"
                         fill
                         style={{ objectFit: "cover" }}
