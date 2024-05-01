@@ -4,7 +4,9 @@ import ProductDetailCarousel from "./ProductDetailCarousel";
 import { LiaCarSideSolid } from "react-icons/lia";
 import { SiHackthebox } from "react-icons/si";
 import { TProduct, TProductId } from "@/types";
-import Loading from "@/app/loading";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import ProductReview from "./ProductReview";
 
 const ProductDetails = async ({ productId }: { productId: string }) => {
   const [product, setProduct] = useState<TProduct | null>(null);
@@ -132,18 +134,34 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
             </div>
           </Container>
 
-          {/* description */}
+          {/* tabs */}
           <section className=" bg-[#F8F8F8] ">
             <div className=" max-w-[1260px] mx-auto px-5 py-16">
-              <h2 className="text-3xl mb-5 ">Description</h2>
+              <Tabs>
+                <TabList className="tabs tabs-boxed bg-gray-400 max-w-80">
+                  <Tab className="tab ">
+                    <h2 className="text-2xl mb-5 ">Description</h2>
+                  </Tab>
+                  <Tab className="tab ">
+                    <h2 className="text-2xl mb-5 ">Reviews</h2>
+                  </Tab>
+                </TabList>
 
-              <ul className="  font-normal text-gray-600 space-y-3">
-                {product?.description?.map(
-                  (sentence: string, index: number) => (
-                    <li key={index}> {sentence}</li>
-                  )
-                )}
-              </ul>
+                <TabPanel>
+                  <div className="my-10">
+                    <ul className="  font-normal text-gray-600 space-y-3">
+                      {product?.description?.map(
+                        (sentence: string, index: number) => (
+                          <li key={index}> {sentence}</li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <ProductReview></ProductReview>
+                </TabPanel>
+              </Tabs>
             </div>
           </section>
         </section>

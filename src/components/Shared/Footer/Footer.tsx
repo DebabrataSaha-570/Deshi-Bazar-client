@@ -83,31 +83,31 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-8">Trending Products</h3>
               <div className="space-y-3">
                 <Link
-                  href="/products/vegetables_fruits/65fd8cb99b12d4e001cece70"
+                  href="/products/vegetables_fruits/662a752c1c73541b44507b59"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Red Tomato
                 </Link>
                 <Link
-                  href="/products/vegetables_fruits/65fd90f7bb0c2007e7001469"
+                  href="/products/vegetables_fruits/662a779f1c73541b44507b5d"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Gala Apple
                 </Link>
                 <Link
-                  href="/products/cooking/65fd99de1c24b5e41bfd4d86"
+                  href="/products/cooking/662ba739ec0c005189e2e976"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Chashi Chinigura Rice
                 </Link>
                 <Link
-                  href="/products/cooking/65fd9d40728112494e35f075"
+                  href="/products/cooking/662ba79dec0c005189e2e977"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Radhuni Chicken Masala
                 </Link>
                 <Link
-                  href="/products/dairy/65fe511d91d50b1a3129c4cb"
+                  href="/products/dairy/662ba936ec0c005189e2e97b"
                   className="block hover:text-[--lightGreen] transition duration-500"
                 >
                   Aarong Butter
