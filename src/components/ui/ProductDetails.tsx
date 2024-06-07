@@ -159,7 +159,7 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  <ProductReview></ProductReview>
+                  <ProductReview product={product}></ProductReview>
                 </TabPanel>
               </Tabs>
             </div>
