@@ -4,8 +4,8 @@ import { IconType } from "react-icons";
 type Review = {
   name: string;
   email: string;
-  ratings: number;
-  comment: string;
+  rating: number;
+  review: string;
 };
 
 export type TProduct = {

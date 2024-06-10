@@ -10,6 +10,36 @@ import ProductReview from "./ProductReview";
 
 const ProductDetails = async ({ productId }: { productId: string }) => {
   const [product, setProduct] = useState<TProduct | null>(null);
+  const [averageRating, setAverageRating] = useState(0);
+
+  const ratingsArray = product?.reviews;
+  let ratingAverage = 0;
+  // Check if ratingsArray exists and has length
+  if (ratingsArray?.length) {
+    const ratingSum = ratingsArray.reduce((acc, curr) => acc + curr.rating, 0);
+
+    // Calculate average rating
+    ratingAverage = ratingSum / ratingsArray.length;
+    console.log(`Calculated Average Rating: ${ratingAverage}`);
+    // setAverageRating(ratingAverage);
+  } else {
+    console.log("No reviews found.");
+  }
+
+  // let ratingSum: number = 0;
+  // let ratingAverage: number = 0;
+  // console.log(ratingAverage);
+  // if (ratingsArray?.length) {
+  //   for (const ratings of ratingsArray) {
+  //     console.log("rating", ratings);
+
+  //     ratingSum += ratings.rating;
+  //   }
+  //   const totalRatingsCount = ratingsArray.length;
+  //   ratingAverage = ratingSum / totalRatingsCount;
+  // } else {
+  //   // ratingAverage = 0;
+  // }
 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -95,7 +125,7 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
                 <div className="flex items-center my-2 font-normal">
                   <h3 className="text-3xl ">&#2547;{product?.price} | </h3>
                   <div className="rating rating-lg rating-half flex items-center mx-3 ">
-                    {generateRatingInputs(product?.ratings)}
+                    {generateRatingInputs(ratingAverage)}
                     <span className="text-gray-500 mx-3">
                       ({product?.reviews.length} review)
                     </span>
