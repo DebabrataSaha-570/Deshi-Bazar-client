@@ -3,6 +3,7 @@ import { getUserInfo } from "@/app/services/auth.service";
 import { TProduct } from "@/types";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import ReviewCarousel from "./ReviewCarousel";
 
 const ProductReview = ({ product }: { product: TProduct }) => {
   const [rating, setRating] = useState(3);
@@ -56,7 +57,7 @@ const ProductReview = ({ product }: { product: TProduct }) => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 my-10">
       <div>
-        <h2>Reviews carousel</h2>
+        <ReviewCarousel reviews={product?.reviews}></ReviewCarousel>
       </div>
 
       <div>

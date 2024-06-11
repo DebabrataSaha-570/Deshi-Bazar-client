@@ -1,7 +1,7 @@
 import { USER_ROLE } from "@/constants/role";
 import { IconType } from "react-icons";
 
-type Review = {
+export type Review = {
   name: string;
   email: string;
   rating: number;
