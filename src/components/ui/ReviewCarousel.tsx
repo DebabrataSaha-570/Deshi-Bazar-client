@@ -45,7 +45,7 @@ const ReviewCarousel = ({ reviews }: { reviews: Review[] }) => {
           <Slider {...settings} className="mx-5">
             {reviews.map((review, index) => (
               <div key={index} className="bg-red-500 mx-5">
-                <h2>Hello</h2>
+                <h3>This are reviews data in a card</h3>
               </div>
             ))}
           </Slider>
