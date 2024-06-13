@@ -42,10 +42,19 @@ const ReviewCarousel = ({ reviews }: { reviews: Review[] }) => {
     <>
       {reviews.length > 0 ? (
         <div className="slider-container">
-          <Slider {...settings} className="mx-5">
+          <Slider {...settings}>
             {reviews.map((review, index) => (
-              <div key={index} className="bg-red-500 mx-5">
-                <h3>This are reviews data in a card</h3>
+              <div
+                key={index}
+                style={{ margin: "20px" }}
+                className="border border-red-500 "
+              >
+                <div
+                  style={{ padding: "10px 20px" }}
+                  className="border border-blue-400 "
+                >
+                  <h2>Hello </h2>
+                </div>
               </div>
             ))}
           </Slider>
