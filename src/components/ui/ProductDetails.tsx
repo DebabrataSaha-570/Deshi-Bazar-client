@@ -22,7 +22,7 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
     console.log(`Calculated Average Rating: ${ratingAverage}`);
     // setAverageRating(ratingAverage);
   } else {
-    console.log("No reviews found.");
+    // console.log("No reviews found.");
   }
 
   useEffect(() => {
