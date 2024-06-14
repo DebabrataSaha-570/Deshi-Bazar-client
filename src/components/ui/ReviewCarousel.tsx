@@ -43,7 +43,7 @@ const ReviewCarousel = ({ reviews }: { reviews: Review[] }) => {
       {reviews.length > 0 ? (
         <div className="slider-container">
           <Slider {...settings}>
-            {reviews.map((review, index) => (
+            {/* {reviews.map((review, index) => (
               <div
                 key={index}
                 style={{ margin: "20px" }}
@@ -56,7 +56,7 @@ const ReviewCarousel = ({ reviews }: { reviews: Review[] }) => {
                   <h2>Hello </h2>
                 </div>
               </div>
-            ))}
+            ))} */}
           </Slider>
         </div>
       ) : (

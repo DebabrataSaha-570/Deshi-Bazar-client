@@ -10,7 +10,6 @@ import ProductReview from "./ProductReview";
 
 const ProductDetails = async ({ productId }: { productId: string }) => {
   const [product, setProduct] = useState<TProduct | null>(null);
-  const [averageRating, setAverageRating] = useState(0);
 
   const ratingsArray = product?.reviews;
   let ratingAverage = 0;
@@ -25,21 +24,6 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
   } else {
     console.log("No reviews found.");
   }
-
-  // let ratingSum: number = 0;
-  // let ratingAverage: number = 0;
-  // console.log(ratingAverage);
-  // if (ratingsArray?.length) {
-  //   for (const ratings of ratingsArray) {
-  //     console.log("rating", ratings);
-
-  //     ratingSum += ratings.rating;
-  //   }
-  //   const totalRatingsCount = ratingsArray.length;
-  //   ratingAverage = ratingSum / totalRatingsCount;
-  // } else {
-  //   // ratingAverage = 0;
-  // }
 
   useEffect(() => {
     const fetchProductData = async () => {

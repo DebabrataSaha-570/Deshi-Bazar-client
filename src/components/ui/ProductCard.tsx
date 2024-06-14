@@ -16,6 +16,20 @@ const ProductCard = ({
   const percentage =
     ((product.price - product.previous_price) / product.previous_price) * 100;
 
+  const ratingsArray = product?.reviews;
+  let ratingAverage = 0;
+  // Check if ratingsArray exists and has length
+  if (ratingsArray?.length) {
+    const ratingSum = ratingsArray.reduce((acc, curr) => acc + curr.rating, 0);
+
+    // Calculate average rating
+    ratingAverage = ratingSum / ratingsArray.length;
+    console.log(`Calculated Average Rating: ${ratingAverage}`);
+    // setAverageRating(ratingAverage);
+  } else {
+    console.log("No reviews found.");
+  }
+
   //if rating value is 3, it will generate three gold star and 2 gray start.. (but it can't generate half start right now. will hove to look later  solving this problem)
   const generateRatingInputs = (rating: number) => {
     const ratingArray = [];
@@ -58,7 +72,6 @@ const ProductCard = ({
             height={0}
             sizes="100vw"
             style={{ width: "320px", height: "320px" }}
-            // style={{ width: "100%", height: "100%" }}
             className="object-cover  "
           ></Image>
           <p className="px-3 py-1 rounded-full bg-gray-700 text-white inline-block absolute top-0 text-sm">
@@ -83,7 +96,7 @@ const ProductCard = ({
         </div>
         {showRating && (
           <div className="rating rating-md rating-half">
-            {generateRatingInputs(product.ratings)}
+            {generateRatingInputs(ratingAverage)}
             <span className="text-gray-500 mx-3">
               ({product.reviews.length})
             </span>

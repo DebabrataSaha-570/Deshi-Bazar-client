@@ -1,5 +1,6 @@
 "use client";
 
+import { isLoggedIn } from "@/app/services/auth.service";
 import Container from "@/components/ui/Container";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -11,6 +12,8 @@ const Navbar = () => {
     () => import("@/components/ui/AuthButton/AuthButton"),
     { ssr: false }
   );
+
+  const islogin = isLoggedIn();
   return (
     <>
       <section className="bg-primary text-[--white] sticky top-0 z-50">
@@ -61,9 +64,11 @@ const Navbar = () => {
                   <li>
                     <Link href="/contact">Contact Us</Link>
                   </li>
-                  <li>
-                    <Link href="/Dashboard">Dashboard</Link>
-                  </li>
+                  {islogin && (
+                    <li>
+                      <Link href="/Dashboard">Dashboard</Link>
+                    </li>
+                  )}
                 </ul>
               </div>
               <Link href="/" className="btn btn-ghost text-2xl text-[--white]">
@@ -94,9 +99,11 @@ const Navbar = () => {
                 {/* <li>
                   <Link href="/contact">Contact Us</Link>
                 </li> */}
-                <li>
-                  <Link href="/Dashboard">Dashboard</Link>
-                </li>
+                {islogin && (
+                  <li>
+                    <Link href="/Dashboard">Dashboard</Link>
+                  </li>
+                )}
               </ul>
             </div>
 
