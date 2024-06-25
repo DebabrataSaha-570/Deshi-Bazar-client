@@ -1,10 +1,7 @@
 import { TProduct } from "@/types";
-import { debug } from "console";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { LuPlusCircle } from "react-icons/lu";
-import Rating from "react-rating";
 
 const ProductCard = ({
   product,
@@ -18,16 +15,14 @@ const ProductCard = ({
 
   const ratingsArray = product?.reviews;
   let ratingAverage = 0;
+
   // Check if ratingsArray exists and has length
   if (ratingsArray?.length) {
     const ratingSum = ratingsArray.reduce((acc, curr) => acc + curr.rating, 0);
 
     // Calculate average rating
     ratingAverage = ratingSum / ratingsArray.length;
-    console.log(`Calculated Average Rating: ${ratingAverage}`);
-    // setAverageRating(ratingAverage);
   } else {
-    console.log("No reviews found.");
   }
 
   //if rating value is 3, it will generate three gold star and 2 gray start.. (but it can't generate half start right now. will hove to look later  solving this problem)

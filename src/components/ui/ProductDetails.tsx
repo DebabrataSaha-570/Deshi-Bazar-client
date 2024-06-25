@@ -19,8 +19,6 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
 
     // Calculate average rating
     ratingAverage = ratingSum / ratingsArray.length;
-    console.log(`Calculated Average Rating: ${ratingAverage}`);
-    // setAverageRating(ratingAverage);
   } else {
     // console.log("No reviews found.");
   }
