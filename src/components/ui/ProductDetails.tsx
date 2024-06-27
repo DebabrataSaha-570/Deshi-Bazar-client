@@ -3,10 +3,11 @@ import Container from "./Container";
 import ProductDetailCarousel from "./ProductDetailCarousel";
 import { LiaCarSideSolid } from "react-icons/lia";
 import { SiHackthebox } from "react-icons/si";
-import { TProduct, TProductId } from "@/types";
+import { TProduct } from "@/types";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ProductReview from "./ProductReview";
+import AddToCart from "./AddToCart";
 
 const ProductDetails = async ({ productId }: { productId: string }) => {
   const [product, setProduct] = useState<TProduct | null>(null);
@@ -49,8 +50,6 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
       </div>
     );
   }
-
-  // const product = await res.json();
 
   const generateRatingInputs = (rating: number | undefined) => {
     const ratingArray = [];
@@ -124,6 +123,9 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
                     )
                   )}
                 </ul>
+
+                {/* Add to cart feature */}
+                <AddToCart></AddToCart>
 
                 <div className="my-5 text-gray-700 space-y-2 font-normal">
                   <p className=" flex  items-center gap-2">

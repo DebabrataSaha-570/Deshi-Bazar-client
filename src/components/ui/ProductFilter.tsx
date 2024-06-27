@@ -3,7 +3,7 @@ import React from "react";
 
 const ProductFilter = ({ params }: any) => {
   return (
-    <div className="  ">
+    <div className=" ">
       <div className="drawer lg:drawer-open">
         <input id="filterSidebar" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
