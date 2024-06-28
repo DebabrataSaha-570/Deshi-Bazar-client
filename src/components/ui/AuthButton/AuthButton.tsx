@@ -59,16 +59,6 @@ const AuthButton = () => {
               </li>
             </ul>
           </div>
-
-          <button className="btn btn-ghost">
-            <FaShoppingCart className="text-[20px]" />
-            <div className="badge badge-secondary">0</div>
-          </button>
-          {/* <div className="btn btn-ghost btn-circle avatar w-15">
-            <span>
-              <FaShoppingCart className="text-[20px]" /> (1)
-            </span>
-          </div> */}
         </>
       ) : (
         <Link className="btn" href="/login">

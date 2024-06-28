@@ -15,7 +15,7 @@ const AddToCart = () => {
   return (
     <div className="mt-5">
       <div className="grid grid-cols-3 gap-3">
-        <div className="flex justify-around items-center gap-4 border border-gray-300 rounded-full">
+        <div className="flex justify-around items-center gap-4 border border-secondary rounded-full">
           <button onClick={handleDecreaseCount} className="text-2xl">
             {" "}
             -{" "}

@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const AuthButton = dynamic(
@@ -109,6 +110,10 @@ const Navbar = () => {
 
             <div className="navbar-end">
               {/* <a className="btn">Button</a> */}
+              <button className="btn btn-ghost">
+                <FaShoppingCart className="text-[20px]" />
+                <div className="badge badge-secondary">0</div>
+              </button>
               <AuthButton></AuthButton>
             </div>
           </div>
