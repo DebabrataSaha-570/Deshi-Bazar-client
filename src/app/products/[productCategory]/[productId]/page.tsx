@@ -10,11 +10,11 @@ const SingleProductPage = ({ params }: TProductId) => {
   const productId = params.productId;
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!isLoggedIn()) {
-  //     router.push("/login");
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    if (!isLoggedIn()) {
+      router.push("/login");
+    }
+  }, [router]);
 
   return (
     <CommonLayout>
