@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CommonLayout from "../(withCommonLayout)/layout";
 import type { Metadata } from "next";
 import { TProduct } from "@/types";

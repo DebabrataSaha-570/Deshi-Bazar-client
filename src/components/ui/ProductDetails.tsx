@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import Container from "./Container";
 import ProductDetailCarousel from "./ProductDetailCarousel";
 import { LiaCarSideSolid } from "react-icons/lia";
@@ -11,6 +11,8 @@ import AddToCart from "./AddToCart";
 
 const ProductDetails = async ({ productId }: { productId: string }) => {
   const [product, setProduct] = useState<TProduct | null>(null);
+  const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState("");
 
   const ratingsArray = product?.reviews;
   let ratingAverage = 0;
@@ -25,28 +27,40 @@ const ProductDetails = async ({ productId }: { productId: string }) => {
   }
 
   useEffect(() => {
-    const fetchProductData = async () => {
-      try {
-        const res = await fetch(
-          ` https://deshi-bazar-server.vercel.app/api/v1/product/${productId}`,
-          {
-            cache: "no-store",
-          }
-        );
-        const productData = await res.json();
-        setProduct(productData);
-      } catch (error) {
-        console.error("Error fetching product data:", error);
-      }
-    };
+    startTransition(() => {
+      fetchProductData();
+    });
+  }, []);
 
-    fetchProductData();
-  }, [productId]);
+  const fetchProductData = async () => {
+    try {
+      const res = await fetch(
+        ` https://deshi-bazar-server.vercel.app/api/v1/product/${productId}`,
+        {
+          next: { revalidate: 30 },
+        }
+      );
+      const productData = await res.json();
 
-  if (!product) {
+      setProduct(productData);
+    } catch (error) {
+      console.error("Error fetching product data:", error);
+      setError("Error fetching product data. Please try again later.");
+    }
+  };
+
+  if (isPending) {
     return (
       <div className=" flex justify-center items-center h-screen">
         <span className="loading loading-bars  loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h2 className="text-xl text-red-500">{error}</h2>
       </div>
     );
   }
